@@ -121,6 +121,28 @@ async function initDatabase() {
     )
   `);
 
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS album_photos (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      user_id INT NOT NULL,
+      filename VARCHAR(255) NOT NULL,
+      url VARCHAR(255) NOT NULL,
+      caption VARCHAR(200) DEFAULT '',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS album_messages (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      user_id INT NOT NULL,
+      content VARCHAR(500) NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
   await connection.end();
   console.log('Database initialized successfully');
 }
