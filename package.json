@@ -1,0 +1,35 @@
+{
+  "name": "techforum",
+  "version": "1.0.0",
+  "description": "TechForum - IT Technology Community with AI Integration",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/app.js",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "init-db": "node server/config/init-db.js",
+    "seed": "node server/config/seed.js",
+    "bootstrap:polyglot": "python3 tools/bootstrap_polyglot.py"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.8",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.5",
+    "node-fetch": "^2.7.0",
+    "uuid": "^9.0.0",
+    "xml2js": "^0.6.2",
+    "xmldom": "^0.6.0",
+    "xpath": "^0.0.33"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}

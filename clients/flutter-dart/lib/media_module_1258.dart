@@ -1,0 +1,16 @@
+
+class MediaItem1258 {
+  final int id;
+  final String title;
+  final String subtitle;
+
+  const MediaItem1258({required this.id, required this.title, required this.subtitle});
+
+  factory MediaItem1258.fromJson(Map<String, dynamic> json) {
+    return MediaItem1258(
+      id: json['id'] as int? ?? 0,
+      title: json['title'] as String? ?? '',
+      subtitle: json['subtitle'] as String? ?? '',
+    );
+  }
+}

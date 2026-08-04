@@ -1,0 +1,16 @@
+
+'use strict';
+
+function buildComment1935Payload(userId, items) {
+  return {
+    userId,
+    items: items || [],
+    createdAt: new Date().toISOString(),
+  };
+}
+
+function calcComment1935Total(items) {
+  return (items || []).reduce((sum, it) => sum + (it.price * it.quantity), 0);
+}
+
+module.exports = { buildComment1935Payload, calcComment1935Total };

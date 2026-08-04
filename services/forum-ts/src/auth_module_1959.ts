@@ -1,0 +1,20 @@
+
+export interface AuthPost1959 {
+  id: number;
+  title: string;
+  content: string;
+  authorId: number;
+  category: string;
+  createdAt: string;
+}
+
+export function normalizeAuth1959(raw: Partial<AuthPost1959>): AuthPost1959 {
+  return {
+    id: raw.id ?? 0,
+    title: raw.title ?? '',
+    content: raw.content ?? '',
+    authorId: raw.authorId ?? 0,
+    category: raw.category ?? 'general',
+    createdAt: raw.createdAt ?? new Date().toISOString(),
+  };
+}

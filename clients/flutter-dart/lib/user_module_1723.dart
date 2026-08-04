@@ -1,0 +1,16 @@
+
+class UserItem1723 {
+  final int id;
+  final String title;
+  final String subtitle;
+
+  const UserItem1723({required this.id, required this.title, required this.subtitle});
+
+  factory UserItem1723.fromJson(Map<String, dynamic> json) {
+    return UserItem1723(
+      id: json['id'] as int? ?? 0,
+      title: json['title'] as String? ?? '',
+      subtitle: json['subtitle'] as String? ?? '',
+    );
+  }
+}

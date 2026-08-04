@@ -1,0 +1,11 @@
+
+const std = @import("std");
+
+pub const NotifyToken3227 = struct {
+    id: u64,
+    value: []const u8,
+
+    pub fn len(self: NotifyToken3227) usize {
+        return self.value.len;
+    }
+};

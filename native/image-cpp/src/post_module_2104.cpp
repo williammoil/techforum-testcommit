@@ -1,0 +1,19 @@
+
+#pragma once
+#include <string>
+#include <vector>
+
+namespace techforum::post {
+
+class PostProcessor2104 {
+public:
+    explicit PostProcessor2104(std::string basePath) : basePath_(std::move(basePath)) {}
+
+    bool exists(const std::string& rel) const;
+    std::vector<unsigned char> readAll(const std::string& rel) const;
+
+private:
+    std::string basePath_;
+};
+
+} // namespace

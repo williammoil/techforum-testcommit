@@ -1,0 +1,16 @@
+
+class ForumItem400 {
+  final int id;
+  final String title;
+  final String subtitle;
+
+  const ForumItem400({required this.id, required this.title, required this.subtitle});
+
+  factory ForumItem400.fromJson(Map<String, dynamic> json) {
+    return ForumItem400(
+      id: json['id'] as int? ?? 0,
+      title: json['title'] as String? ?? '',
+      subtitle: json['subtitle'] as String? ?? '',
+    );
+  }
+}

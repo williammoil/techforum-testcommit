@@ -1,0 +1,11 @@
+
+const std = @import("std");
+
+pub const ShopToken461 = struct {
+    id: u64,
+    value: []const u8,
+
+    pub fn len(self: ShopToken461) usize {
+        return self.value.len;
+    }
+};

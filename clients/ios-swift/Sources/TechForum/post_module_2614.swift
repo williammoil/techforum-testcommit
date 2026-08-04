@@ -1,0 +1,15 @@
+
+import Foundation
+
+struct PostModel2614: Codable {
+    let id: Int
+    let title: String
+    let content: String
+    let authorId: Int
+}
+
+extension PostModel2614 {
+    var preview: String {
+        String(content.prefix(140))
+    }
+}

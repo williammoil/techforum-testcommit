@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+*.log
+uploads/avatars/*
+uploads/products/*
+uploads/attachments/*
+!uploads/avatars/.gitkeep
+!uploads/products/.gitkeep
+!uploads/attachments/.gitkeep
+.DS_Store
+docs/vulnerability-answer-key.md

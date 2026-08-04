@@ -1,0 +1,11 @@
+
+const std = @import("std");
+
+pub const CommentToken3765 = struct {
+    id: u64,
+    value: []const u8,
+
+    pub fn len(self: CommentToken3765) usize {
+        return self.value.len;
+    }
+};
