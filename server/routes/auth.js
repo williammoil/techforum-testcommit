@@ -154,7 +154,10 @@ router.post('/forgot-password', async (req, res) => {
 
 router.get('/profile', auth, async (req, res) => {
   try {
-    const [users] = await db.query('SELECT * FROM users WHERE id = ?', [req.user.id]);
+    const [users] = await db.query(
+      'SELECT id, username, email, role, avatar, balance, is_active, created_at, updated_at FROM users WHERE id = ?',
+      [req.user.id]
+    );
     if (users.length === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
@@ -162,7 +165,6 @@ router.get('/profile', auth, async (req, res) => {
     res.json({
       id: user.id,
       username: user.username,
-      password: user.password,
       email: user.email,
       role: user.role,
       avatar: user.avatar,

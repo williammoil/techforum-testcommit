@@ -47,14 +47,41 @@ router.post('/:id/ai-comment', auth, async (req, res) => {
 
     const { tone, focus_area, avatar_url } = req.body;
 
+    // Do not server-side fetch user-supplied URLs (SSRF). Only accept safe HTTPS avatar URLs.
     let aiAvatarUrl = null;
     if (avatar_url) {
       try {
-        const response = await fetch(avatar_url);
-        if (response.ok) {
-          aiAvatarUrl = avatar_url;
+        const parsed = new URL(avatar_url);
+        const host = parsed.hostname.toLowerCase();
+        const blockedHosts = new Set([
+          'localhost',
+          'metadata.google.internal',
+          'metadata',
+        ]);
+        const isIpLiteral = /^(\d{1,3}\.){3}\d{1,3}$/.test(host) || host.includes(':');
+        const isPrivateIp = (ip) => {
+          const parts = ip.split('.').map(Number);
+          if (parts.length !== 4 || parts.some((n) => Number.isNaN(n) || n < 0 || n > 255)) return true;
+          if (parts[0] === 10) return true;
+          if (parts[0] === 127) return true;
+          if (parts[0] === 0) return true;
+          if (parts[0] === 169 && parts[1] === 254) return true;
+          if (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) return true;
+          if (parts[0] === 192 && parts[1] === 168) return true;
+          return false;
+        };
+
+        if (
+          parsed.protocol === 'https:' &&
+          !blockedHosts.has(host) &&
+          !host.endsWith('.local') &&
+          !host.endsWith('.internal') &&
+          !(isIpLiteral && isPrivateIp(host))
+        ) {
+          aiAvatarUrl = parsed.toString();
         }
       } catch (e) {
+        // ignore invalid avatar URLs
       }
     }
 

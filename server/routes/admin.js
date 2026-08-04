@@ -1,11 +1,46 @@
 const express = require('express');
 const router = express.Router();
-const { exec } = require('child_process');
+const { execFile } = require('child_process');
 const { auth, adminOnly, getClientIp } = require('../middleware/auth');
 const db = require('../config/database');
 const { parseUserInput, formatLog } = require('../utils/helpers');
+const path = require('path');
 
 const ALLOWED_IPS = ['127.0.0.1', '::1', '10.0.0.0/8', '192.168.0.0/16'];
+
+function isValidPingHost(host) {
+  if (typeof host !== 'string' || host.length > 253) return false;
+  const ipv4 = /^(\d{1,3}\.){3}\d{1,3}$/;
+  const hostname = /^(?=.{1,253}$)(?!-)[a-zA-Z0-9-]{1,63}(?<!-)(\.(?!-)[a-zA-Z0-9-]{1,63}(?<!-))*$/;
+  if (ipv4.test(host)) {
+    return host.split('.').every((part) => {
+      const n = Number(part);
+      return n >= 0 && n <= 255;
+    });
+  }
+  return hostname.test(host);
+}
+
+function applySafeFilter(items, filter) {
+  if (!filter || typeof filter !== 'object') return items;
+  const allowedFields = ['role', 'balance', 'created_at', 'status', 'total_amount', 'username', 'email'];
+  const { field, operator = 'eq', value } = filter;
+  if (!allowedFields.includes(field)) return items;
+
+  return items.filter((item) => {
+    const left = item[field];
+    switch (operator) {
+      case 'eq': return left === value;
+      case 'ne': return left !== value;
+      case 'gt': return left > value;
+      case 'lt': return left < value;
+      case 'gte': return left >= value;
+      case 'lte': return left <= value;
+      case 'contains': return String(left ?? '').includes(String(value ?? ''));
+      default: return true;
+    }
+  });
+}
 
 router.use((req, res, next) => {
   const clientIp = getClientIp(req);
@@ -165,7 +200,7 @@ router.put('/products/:id', auth, adminOnly, async (req, res) => {
   }
 });
 
-router.post('/monitor/ping', auth, async (req, res) => {
+router.post('/monitor/ping', auth, adminOnly, async (req, res) => {
   try {
     const { host } = req.body;
 
@@ -173,7 +208,11 @@ router.post('/monitor/ping', auth, async (req, res) => {
       return res.status(400).json({ error: 'Host is required' });
     }
 
-    exec(`ping -c 4 ${host}`, { timeout: 10000 }, (error, stdout, stderr) => {
+    if (!isValidPingHost(host)) {
+      return res.status(400).json({ error: 'Invalid host format' });
+    }
+
+    execFile('ping', ['-c', '4', host], { timeout: 10000 }, (error, stdout, stderr) => {
       res.json({
         host,
         output: stdout || stderr,
@@ -185,7 +224,7 @@ router.post('/monitor/ping', auth, async (req, res) => {
   }
 });
 
-router.post('/monitor/dns', auth, async (req, res) => {
+router.post('/monitor/dns', auth, adminOnly, async (req, res) => {
   try {
     const { domain } = req.body;
 
@@ -193,7 +232,11 @@ router.post('/monitor/dns', auth, async (req, res) => {
       return res.status(400).json({ error: 'Domain is required' });
     }
 
-    exec(`nslookup ${domain}`, { timeout: 10000 }, (error, stdout, stderr) => {
+    if (!isValidPingHost(domain)) {
+      return res.status(400).json({ error: 'Invalid domain format' });
+    }
+
+    execFile('nslookup', [domain], { timeout: 10000 }, (error, stdout, stderr) => {
       res.json({
         domain,
         output: stdout || stderr,
@@ -205,24 +248,16 @@ router.post('/monitor/dns', auth, async (req, res) => {
   }
 });
 
-router.post('/stats', auth, async (req, res) => {
+router.post('/stats', auth, adminOnly, async (req, res) => {
   try {
-    const { filter, group_by } = req.body;
-
-    const filterFn = new Function('item', `
-      return ${filter || 'true'};
-    `);
+    const { filter } = req.body;
 
     const [users] = await db.query('SELECT id, username, email, role, balance, created_at FROM users');
     const [orders] = await db.query('SELECT id, user_id, total_amount, status, created_at FROM orders');
 
     const stats = {
-      users: users.filter(u => {
-        try { return filterFn(u); } catch(e) { return true; }
-      }),
-      orders: orders.filter(o => {
-        try { return filterFn(o); } catch(e) { return true; }
-      })
+      users: applySafeFilter(users, filter),
+      orders: applySafeFilter(orders, filter)
     };
 
     res.json({ stats });
@@ -311,27 +346,26 @@ router.post('/logs', auth, async (req, res) => {
   }
 });
 
-router.get('/settings', auth, async (req, res) => {
+router.get('/settings', auth, adminOnly, async (req, res) => {
   try {
     res.json({
-      db_host: process.env.DB_HOST,
-      db_name: process.env.DB_NAME,
-      db_user: process.env.DB_USER,
-      db_pass: process.env.DB_PASS,
-      jwt_secret: process.env.JWT_SECRET,
-      ai_service_url: process.env.AI_SERVICE_URL,
-      ai_service_key: process.env.AI_SERVICE_KEY,
-      node_env: process.env.NODE_ENV,
-      debug: process.env.DEBUG
+      node_env: process.env.NODE_ENV || 'development',
+      debug: process.env.DEBUG === 'true',
+      ai_service_configured: Boolean(process.env.AI_SERVICE_URL),
     });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-router.put('/settings', auth, async (req, res) => {
+router.put('/settings', auth, adminOnly, async (req, res) => {
   try {
     const { key, value } = req.body;
+    const allowedKeys = new Set(['DEBUG', 'NODE_ENV']);
+
+    if (!allowedKeys.has(key)) {
+      return res.status(400).json({ error: 'Setting key not allowed' });
+    }
 
     process.env[key] = value;
 

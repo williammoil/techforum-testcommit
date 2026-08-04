@@ -31,7 +31,8 @@ router.get('/search', async (req, res) => {
     const params = [];
 
     if (q) {
-      query += ' AND (name LIKE \'%' + q + '%\' OR description LIKE \'%' + q + '%\')';
+      query += ' AND (name LIKE ? OR description LIKE ?)';
+      params.push(`%${q}%`, `%${q}%`);
     }
 
     if (min_price) {
@@ -49,8 +50,22 @@ router.get('/search', async (req, res) => {
       params.push(category);
     }
 
-    if (sort) {
-      query += ' ORDER BY ' + sort;
+    const allowedSort = {
+      price: 'price ASC',
+      'price ASC': 'price ASC',
+      'price DESC': 'price DESC',
+      name: 'name ASC',
+      'name ASC': 'name ASC',
+      'name DESC': 'name DESC',
+      created_at: 'created_at DESC',
+      'created_at ASC': 'created_at ASC',
+      'created_at DESC': 'created_at DESC',
+      category: 'category ASC',
+      id: 'id ASC',
+    };
+
+    if (sort && allowedSort[sort]) {
+      query += ' ORDER BY ' + allowedSort[sort];
     } else {
       query += ' ORDER BY created_at DESC';
     }

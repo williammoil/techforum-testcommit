@@ -37,17 +37,27 @@ router.post('/upload', auth, (req, res) => {
 router.get('/download', (req, res) => {
   const { file } = req.query;
 
-  if (!file) {
+  if (!file || typeof file !== 'string') {
     return res.status(400).json({ error: 'File parameter is required' });
   }
 
-  const filePath = path.join(__dirname, '..', '..', 'uploads', file);
+  // Reject path traversal and absolute paths
+  if (file.includes('\0') || path.isAbsolute(file) || file.split(/[/\\]/).includes('..')) {
+    return res.status(400).json({ error: 'Invalid filename' });
+  }
 
-  if (!fs.existsSync(filePath)) {
+  const uploadDir = path.resolve(__dirname, '..', '..', 'uploads');
+  const filePath = path.resolve(uploadDir, file);
+
+  if (!filePath.startsWith(uploadDir + path.sep) && filePath !== uploadDir) {
+    return res.status(403).json({ error: 'Access denied' });
+  }
+
+  if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
     return res.status(404).json({ error: 'File not found' });
   }
 
-  const filename = path.basename(file);
+  const filename = path.basename(filePath);
   res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
   res.setHeader('Content-Type', 'application/octet-stream');
 
