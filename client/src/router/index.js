@@ -15,6 +15,7 @@ const routes = [
   { path: '/ai-chat', name: 'AiChat', component: () => import('../views/AiChat.vue') },
   { path: '/snake', name: 'Snake', component: () => import('../views/Snake.vue') },
   { path: '/album', name: 'Album', component: () => import('../views/Album.vue') },
+  { path: '/jokes', name: 'Jokes', component: () => import('../views/Jokes.vue') },
   { path: '/admin', name: 'Admin', component: () => import('../views/Admin.vue') },
 ]
 

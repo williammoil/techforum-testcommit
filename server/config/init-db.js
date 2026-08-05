@@ -143,6 +143,30 @@ async function initDatabase() {
     )
   `);
 
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS jokes (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      user_id INT NOT NULL,
+      title VARCHAR(120) NOT NULL,
+      content TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS joke_comments (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      joke_id INT NOT NULL,
+      user_id INT NOT NULL,
+      content VARCHAR(500) NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (joke_id) REFERENCES jokes(id) ON DELETE CASCADE,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
   await connection.end();
   console.log('Database initialized successfully');
 }
