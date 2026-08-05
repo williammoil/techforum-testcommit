@@ -37,7 +37,8 @@ router.use(async (req, res, next) => {
     await ensureTables();
     next();
   } catch (err) {
-    res.status(500).json({ error: 'Joke storage unavailable: ' + err.message });
+    console.error('Joke storage init failed:', err);
+    res.status(500).json({ error: 'Joke storage unavailable' });
   }
 });
 
@@ -61,7 +62,8 @@ router.get('/', async (req, res) => {
 
     res.json({ jokes, total, page, limit });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('List jokes failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -91,7 +93,8 @@ router.get('/:id', async (req, res) => {
 
     res.json({ joke: jokes[0], comments });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Get joke failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -122,7 +125,8 @@ router.post('/', auth, async (req, res) => {
       message: 'Joke created'
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Create joke failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -142,7 +146,8 @@ router.delete('/:id', auth, async (req, res) => {
     await db.query('DELETE FROM jokes WHERE id = ?', [joke.id]);
     res.json({ message: 'Joke deleted' });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Delete joke failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -159,7 +164,8 @@ router.get('/:id/comments', async (req, res) => {
     );
     res.json({ comments });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('List joke comments failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -189,7 +195,8 @@ router.post('/:id/comments', auth, async (req, res) => {
       message: 'Comment added'
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Create joke comment failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -211,7 +218,8 @@ router.delete('/:id/comments/:commentId', auth, async (req, res) => {
     await db.query('DELETE FROM joke_comments WHERE id = ?', [comment.id]);
     res.json({ message: 'Comment deleted' });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Delete joke comment failed:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
