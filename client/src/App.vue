@@ -8,7 +8,7 @@
             <span class="tagline">IT技术社区</span>
           </div>
           <nav class="nav-links">
-            <router-link to="/">首页</router-link>
+            <router-link to="/">官网</router-link>
             <router-link to="/forum">技术讨论</router-link>
             <router-link to="/shop">电子商城</router-link>
             <router-link to="/snake">贪吃蛇</router-link>
