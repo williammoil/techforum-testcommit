@@ -78,10 +78,6 @@
             <strong>相册留言</strong>
             <span>记录瞬间与社区温度</span>
           </router-link>
-          <router-link to="/jokes" class="module-link">
-            <strong>笑话墙</strong>
-            <span>轻松一笑，拉近距离</span>
-          </router-link>
           <router-link to="/snake" class="module-link">
             <strong>贪吃蛇</strong>
             <span>忙里偷闲的小憩</span>

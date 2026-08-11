@@ -16,7 +16,6 @@ const aiRoutes = require('./routes/ai');
 const fileRoutes = require('./routes/files');
 const adminRoutes = require('./routes/admin');
 const albumRoutes = require('./routes/album');
-const jokeRoutes = require('./routes/jokes');
 
 const app = express();
 
@@ -64,7 +63,6 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/files', fileRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/album', albumRoutes);
-app.use('/api/jokes', jokeRoutes);
 
 app.use((err, req, res, next) => {
   if (process.env.DEBUG === 'true') {
