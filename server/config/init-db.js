@@ -143,6 +143,60 @@ async function initDatabase() {
     )
   `);
 
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS surveys (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      user_id INT NOT NULL,
+      title VARCHAR(200) NOT NULL,
+      description TEXT,
+      share_mode ENUM('public', 'restricted') NOT NULL DEFAULT 'public',
+      share_token VARCHAR(64) NOT NULL UNIQUE,
+      status ENUM('draft', 'published', 'closed') NOT NULL DEFAULT 'draft',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS survey_questions (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      survey_id INT NOT NULL,
+      type VARCHAR(32) NOT NULL,
+      title VARCHAR(300) NOT NULL,
+      description VARCHAR(500) DEFAULT '',
+      required TINYINT(1) NOT NULL DEFAULT 0,
+      options_json JSON,
+      media_url VARCHAR(500) DEFAULT '',
+      sort_order INT NOT NULL DEFAULT 0,
+      FOREIGN KEY (survey_id) REFERENCES surveys(id) ON DELETE CASCADE
+    )
+  `);
+
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS survey_responses (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      survey_id INT NOT NULL,
+      respondent_id INT,
+      respondent_name VARCHAR(100) DEFAULT '',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (survey_id) REFERENCES surveys(id) ON DELETE CASCADE,
+      FOREIGN KEY (respondent_id) REFERENCES users(id)
+    )
+  `);
+
+  await connection.query(`
+    CREATE TABLE IF NOT EXISTS survey_answers (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      response_id INT NOT NULL,
+      question_id INT NOT NULL,
+      answer_text TEXT,
+      answer_json JSON,
+      FOREIGN KEY (response_id) REFERENCES survey_responses(id) ON DELETE CASCADE,
+      FOREIGN KEY (question_id) REFERENCES survey_questions(id) ON DELETE CASCADE
+    )
+  `);
+
   await connection.end();
   console.log('Database initialized successfully');
 }

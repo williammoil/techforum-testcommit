@@ -15,6 +15,10 @@ const routes = [
   { path: '/ai-chat', name: 'AiChat', component: () => import('../views/AiChat.vue') },
   { path: '/snake', name: 'Snake', component: () => import('../views/Snake.vue') },
   { path: '/album', name: 'Album', component: () => import('../views/Album.vue') },
+  { path: '/surveys', name: 'Surveys', component: () => import('../views/Surveys.vue') },
+  { path: '/surveys/:id/edit', name: 'SurveyEditor', component: () => import('../views/SurveyEditor.vue') },
+  { path: '/surveys/:id/results', name: 'SurveyResults', component: () => import('../views/SurveyResults.vue') },
+  { path: '/surveys/s/:token', name: 'SurveyFill', component: () => import('../views/SurveyFill.vue') },
   { path: '/admin', name: 'Admin', component: () => import('../views/Admin.vue') },
 ]
 

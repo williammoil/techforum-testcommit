@@ -78,6 +78,10 @@
             <strong>相册留言</strong>
             <span>记录瞬间与社区温度</span>
           </router-link>
+          <router-link to="/surveys" class="module-link">
+            <strong>调查问卷</strong>
+            <span>公开或限制分享，支持多媒体题目</span>
+          </router-link>
           <router-link to="/snake" class="module-link">
             <strong>贪吃蛇</strong>
             <span>忙里偷闲的小憩</span>

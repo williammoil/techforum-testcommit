@@ -6,9 +6,11 @@ uploads/avatars/*
 uploads/products/*
 uploads/attachments/*
 uploads/album/*
+uploads/surveys/*
 !uploads/avatars/.gitkeep
 !uploads/products/.gitkeep
 !uploads/attachments/.gitkeep
 !uploads/album/.gitkeep
+!uploads/surveys/.gitkeep
 .DS_Store
 docs/vulnerability-answer-key.md

@@ -13,6 +13,7 @@
             <router-link to="/shop">电子商城</router-link>
             <router-link to="/snake">贪吃蛇</router-link>
             <router-link to="/album">相册留言</router-link>
+            <router-link to="/surveys">调查问卷</router-link>
             <router-link v-if="user" to="/orders">我的订单</router-link>
             <router-link v-if="user && user.role === 'admin'" to="/admin">后台管理</router-link>
           </nav>
