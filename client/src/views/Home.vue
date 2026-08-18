@@ -86,6 +86,10 @@
             <strong>贪吃蛇</strong>
             <span>忙里偷闲的小憩</span>
           </router-link>
+          <router-link to="/tetris" class="module-link">
+            <strong>俄罗斯方块</strong>
+            <span>经典消行，挑战反应与规划</span>
+          </router-link>
         </div>
       </div>
     </section>

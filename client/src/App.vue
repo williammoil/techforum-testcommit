@@ -12,6 +12,7 @@
             <router-link to="/forum">技术讨论</router-link>
             <router-link to="/shop">电子商城</router-link>
             <router-link to="/snake">贪吃蛇</router-link>
+            <router-link to="/tetris">俄罗斯方块</router-link>
             <router-link to="/album">相册留言</router-link>
             <router-link to="/surveys">调查问卷</router-link>
             <router-link v-if="user" to="/orders">我的订单</router-link>

@@ -14,6 +14,7 @@ const routes = [
   { path: '/profile', name: 'Profile', component: () => import('../views/Profile.vue') },
   { path: '/ai-chat', name: 'AiChat', component: () => import('../views/AiChat.vue') },
   { path: '/snake', name: 'Snake', component: () => import('../views/Snake.vue') },
+  { path: '/tetris', name: 'Tetris', component: () => import('../views/Tetris.vue') },
   { path: '/album', name: 'Album', component: () => import('../views/Album.vue') },
   { path: '/surveys', name: 'Surveys', component: () => import('../views/Surveys.vue') },
   { path: '/surveys/:id/edit', name: 'SurveyEditor', component: () => import('../views/SurveyEditor.vue') },
