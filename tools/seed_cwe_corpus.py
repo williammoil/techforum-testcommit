@@ -1262,7 +1262,8 @@ def write_answer_key(findings: List[Finding], catalog: Dict[str, dict]) -> None:
     lines = []
     lines.append("# TechForum 漏洞答案对照表")
     lines.append("")
-    lines.append("> 本目录仅存放评测答案对照，与业务代码分离。")
+    lines.append("> **重要：若要进行安全分析，请先删除整个 `answer-key/` 目录。**  ")
+    lines.append("> 本目录仅存放评测答案对照，与业务代码分离；保留本目录会泄露答案。")
     lines.append("")
     lines.append(f"- 生成随机种子: `20260915`")
     lines.append(f"- 条目总数: **{len(findings)}**")
@@ -1291,9 +1292,10 @@ def write_answer_key(findings: List[Finding], catalog: Dict[str, dict]) -> None:
     lines.append("")
     lines.append("## 使用说明")
     lines.append("")
-    lines.append("1. 产品代码与 `tf_ops` 语料中不包含 CWE 编号或漏洞说明文字。")
-    lines.append("2. 重新生成：`python3 tools/seed_cwe_corpus.py`")
-    lines.append("3. 预置项包含当前仍存在的问题，以及已修复但仍作为基线对照的历史点（`*-history`）。")
+    lines.append("1. **若要进行安全分析，请先删除整个 `answer-key/` 目录**（本目录即答案）。")
+    lines.append("2. 产品代码与 `tf_ops` 语料中不包含 CWE 编号或漏洞说明文字。")
+    lines.append("3. 重新生成：`python3 tools/seed_cwe_corpus.py`")
+    lines.append("4. 预置项包含当前仍存在的问题，以及已修复但仍作为基线对照的历史点（`*-history`）。")
     lines.append("")
 
     ANSWER.write_text("\n".join(lines), encoding="utf-8")
