@@ -13,4 +13,4 @@ uploads/surveys/*
 !uploads/album/.gitkeep
 !uploads/surveys/.gitkeep
 .DS_Store
-docs/vulnerability-answer-key.md
+# answer-key/ is published separately for grading; keep product docs clean if needed

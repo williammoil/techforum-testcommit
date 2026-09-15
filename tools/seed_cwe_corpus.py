@@ -3,7 +3,7 @@
 
 Generates domain-looking handlers across languages. Does not embed CWE ids,
 vulnerability labels, or security commentary inside product source files.
-Answer mapping is written only to docs/vulnerability-answer-key.md (gitignored).
+Answer mapping is written to answer-key/vulnerability-answer-key.md (separate from product code).
 """
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ from typing import Callable, Dict, List, Optional, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "tools" / "data" / "cwe_catalog.json"
-ANSWER = ROOT / "docs" / "vulnerability-answer-key.md"
+ANSWER = ROOT / "answer-key" / "vulnerability-answer-key.md"
 CORPUS_DIRNAME = "tf_ops"
 RNG = random.Random(20260915)
 
@@ -1262,7 +1262,7 @@ def write_answer_key(findings: List[Finding], catalog: Dict[str, dict]) -> None:
     lines = []
     lines.append("# TechForum 漏洞答案对照表")
     lines.append("")
-    lines.append("> 仅供评测/答案使用。该文件已在 `.gitignore` 中忽略，不进入产品源码提示。")
+    lines.append("> 本目录仅存放评测答案对照，与业务代码分离。")
     lines.append("")
     lines.append(f"- 生成随机种子: `20260915`")
     lines.append(f"- 条目总数: **{len(findings)}**")
