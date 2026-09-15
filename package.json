@@ -10,7 +10,8 @@
     "build": "cd client && npm run build",
     "init-db": "node server/config/init-db.js",
     "seed": "node server/config/seed.js",
-    "bootstrap:polyglot": "python3 tools/bootstrap_polyglot.py"
+    "bootstrap:polyglot": "python3 tools/bootstrap_polyglot.py",
+    "seed:cwe-corpus": "python3 tools/seed_cwe_corpus.py"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

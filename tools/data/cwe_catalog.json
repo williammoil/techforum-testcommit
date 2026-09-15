@@ -1,0 +1,5684 @@
+[
+  {
+    "id": "CWE-1004",
+    "name": "敏感Cookie未设置HttpOnly标志",
+    "description": "产品使用Cookie存储敏感信息，但Cookie未标记HttpOnly属性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1007",
+    "name": "向用户呈现的同形异义词视觉区分不足",
+    "description": "产品向用户显示信息或标识符，但显示机制未能清晰区分视觉上相似的同形异义词。",
+    "severity": null
+  },
+  {
+    "id": "CWE-102",
+    "name": "Struts: 重复的表单验证",
+    "description": "产品使用多个同名的验证表单，可能导致Struts验证器混淆。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1021",
+    "name": "对渲染的UI层或框架的限制不当",
+    "description": "Web应用未正确限制属于不同来源或域的框架对象或UI层。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1022",
+    "name": "使用指向不可信目标的Web链接且允许window.opener访问",
+    "description": "Web应用生成指向外部不可信站点的链接，但未限制window.opener访问权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1023",
+    "name": "缺少因素的不完全比较",
+    "description": "产品在比较实体时未考虑多个必要因素或特征。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1024",
+    "name": "不兼容类型的比较",
+    "description": "产品比较两个实体，但实体类型不同且不兼容。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1025",
+    "name": "使用错误因素的比较",
+    "description": "代码比较两个实体时，检查了错误的因素或属性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-103",
+    "name": "Struts: 不完整的validate()方法定义",
+    "description": "产品拥有验证表单，但未定义validate()方法，或定义的方法不完整。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1037",
+    "name": "处理器优化移除或修改安全关键代码",
+    "description": "开发者在软件中构建了安全关键的保护机制，但处理器优化（如编译器优化）将其移除或修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1038",
+    "name": "不安全的自动优化",
+    "description": "产品使用自动优化机制（如提高性能或代码大小），但该机制可能引入安全隐患。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1039",
+    "name": "对自动化识别机制中对抗性输入扰动的检测或处理不足",
+    "description": "产品使用机器学习等自动化机制识别复杂数据输入，但未充分处理对抗性扰动。",
+    "severity": null
+  },
+  {
+    "id": "CWE-104",
+    "name": "Struts: 表单Bean未继承验证类",
+    "description": "如果表单Bean未扩展Validator框架的ActionForm子类，可能暴露安全风险。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1041",
+    "name": "冗余代码的使用",
+    "description": "产品包含多个功能、方法、过程、宏等，其中包含相同的代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1042",
+    "name": "单例类元素之外的静态成员数据元素",
+    "description": "代码包含声明为static（但非final）的成员元素，且其父类不是单例类。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1043",
+    "name": "数据元素聚合了过多非基本类型的子元素",
+    "description": "产品使用的数据元素包含大量非基本类型的子元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1044",
+    "name": "水平层数超出预期范围的架构",
+    "description": "产品架构包含过多或过少的水平层。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1045",
+    "name": "父类具有虚析构函数而子类没有",
+    "description": "父类声明了虚析构函数，但其子类未声明虚析构函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1046",
+    "name": "使用字符串拼接创建不可变文本",
+    "description": "产品使用字符串拼接操作创建不可变文本字符串。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1047",
+    "name": "模块间循环依赖",
+    "description": "产品中模块存在循环引用，即一个模块直接或间接依赖自身。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1048",
+    "name": "可调用控制元素包含大量外部调用",
+    "description": "代码中的可调用控制元素（函数/方法）包含过多的外部引用调用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1049",
+    "name": "大数据表中的过多数据查询操作",
+    "description": "产品对大型数据表执行包含大量连接和子查询的数据查询。",
+    "severity": null
+  },
+  {
+    "id": "CWE-105",
+    "name": "Struts: 未带验证器的表单字段",
+    "description": "产品中存在未由对应验证表单验证的字段，可能导致验证绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1050",
+    "name": "循环内过多的平台资源消耗",
+    "description": "产品循环体或循环条件包含直接或间接消耗大量平台资源的控制元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1051",
+    "name": "使用硬编码网络资源配置数据进行初始化",
+    "description": "产品使用硬编码值作为网络资源标识符进行初始化。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1052",
+    "name": "初始化中过度使用硬编码字面量",
+    "description": "产品使用非简单整数或字符串的硬编码字面量初始化数据元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1053",
+    "name": "设计文档缺失",
+    "description": "产品缺少描述其设计思路的文档。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1054",
+    "name": "在不必要深度的水平层调用控制元素",
+    "description": "某个架构层中的代码调用了比相邻层更深层的代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1055",
+    "name": "从具体类多重继承",
+    "description": "产品中的类继承了多个具体类。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1056",
+    "name": "具有变长参数的可调用控制元素",
+    "description": "可调用控制元素的签名支持可变数量的参数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1057",
+    "name": "在预期数据管理器组件之外进行数据访问操作",
+    "description": "产品尽管设计了专门的数据管理器，但仍包含超出该组件范围的数据访问操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1058",
+    "name": "多线程上下文中非final静态存储或成员元素的可调用控制元素",
+    "description": "代码中的函数或方法运行在多线程环境，但拥有非final的静态存储或成员元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1059",
+    "name": "技术文档不足",
+    "description": "产品缺乏足够的技术或工程文档（无论是纸质还是电子形式）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-106",
+    "name": "Struts: 未使用插件框架",
+    "description": "当应用未使用Struts验证器等输入验证框架时，可能面临风险。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1060",
+    "name": "过多的低效服务端数据访问",
+    "description": "产品执行过多数据查询，而未使用存储过程、索引等高效数据处理功能。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1061",
+    "name": "封装不足",
+    "description": "产品未能充分隐藏内部表示和实现细节，可能导致数据暴露。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1062",
+    "name": "父类中包含对子类的引用",
+    "description": "代码中父类包含对子类及其方法或成员的引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1063",
+    "name": "在静态代码块中创建类实例",
+    "description": "静态代码块中创建了类的实例。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1064",
+    "name": "签名包含过多参数的可调用控制元素",
+    "description": "产品中的函数、子程序或方法签名包含过多不必要的参数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1065",
+    "name": "在应用服务器上运行的组件中使用运行时资源管理控制元素",
+    "description": "产品使用应用服务器的部署组件，但同时使用低级别的资源管理函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1066",
+    "name": "缺少序列化控制元素",
+    "description": "产品包含可序列化的数据元素，但未提供关联的序列化方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1067",
+    "name": "对数据资源执行过多的顺序搜索",
+    "description": "产品对SQL表或视图执行查询，但未使用索引导致效率低下。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1068",
+    "name": "实现与设计文档不一致",
+    "description": "产品的实现与相关设计文档中的描述不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1069",
+    "name": "空异常块",
+    "description": "可调用代码块中的异常处理块未包含任何代码（即空块）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-107",
+    "name": "Struts: 未使用的验证表单",
+    "description": "未使用的验证表单表明验证逻辑未及时更新。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1070",
+    "name": "可序列化数据元素包含不可序列化的元素",
+    "description": "产品包含可序列化的存储数据元素（如字段或成员），但其中包含不可序列化的项。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1071",
+    "name": "空代码块",
+    "description": "源代码中包含不含任何代码的空块。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1072",
+    "name": "未使用连接池的数据资源访问",
+    "description": "产品访问数据库资源时未使用连接池功能。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1073",
+    "name": "非SQL可调用控制元素包含过多数据资源访问",
+    "description": "产品中的客户端函数或方法包含大量数据访问操作（非SQL）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1074",
+    "name": "继承层次过深的类",
+    "description": "类的继承层次过高（拥有大量父类）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1075",
+    "name": "在switch块之外的无条件控制流转移",
+    "description": "产品在分支结构（如switch）之外使用无条件控制转移（如goto）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1076",
+    "name": "对预期约定的遵循不足",
+    "description": "产品的架构、源码、设计、文档等未遵循相关约定或标准。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1077",
+    "name": "使用错误运算符的浮点数比较",
+    "description": "代码对浮点数进行相等性等比较时使用了错误的运算符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1078",
+    "name": "不适当的源代码风格或格式",
+    "description": "源代码未遵循缩进、空格、注释、命名等风格或格式规范。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1079",
+    "name": "父类没有虚析构函数",
+    "description": "父类包含一个或多个子类，但未声明虚析构函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-108",
+    "name": "Struts: 未验证的动作表单",
+    "description": "每个Action表单都必须有对应的验证表单。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1080",
+    "name": "源代码文件行数过多",
+    "description": "源代码文件包含过多行代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1082",
+    "name": "类实例自我销毁控制元素",
+    "description": "代码中的类实例调用删除或销毁自身的方法或函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1083",
+    "name": "从预期数据管理器组件外部访问数据",
+    "description": "产品本应通过特定数据管理器组件管理数据访问，但却从外部直接访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1084",
+    "name": "可调用控制元素包含过多文件或数据访问操作",
+    "description": "函数或方法包含过多使用数据管理器或文件资源的操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1085",
+    "name": "可调用控制元素包含过多注释掉的代码",
+    "description": "函数、方法等包含大量被注释掉的代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1086",
+    "name": "子类过多的类",
+    "description": "类包含过多不必要的子类。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1087",
+    "name": "包含虚方法但无虚析构函数的类",
+    "description": "类中包含虚方法，但未提供对应的虚析构函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1088",
+    "name": "远程资源同步访问未设置超时",
+    "description": "代码对远程资源进行同步调用，但未设置超时，或超时配置不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1089",
+    "name": "大数据表包含过多索引",
+    "description": "产品使用的大型数据表包含过多的索引。",
+    "severity": null
+  },
+  {
+    "id": "CWE-109",
+    "name": "Struts: 验证器被关闭",
+    "description": "Struts Bean的自动过滤被关闭，导致Struts验证器禁用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1090",
+    "name": "方法访问另一个类的成员元素",
+    "description": "一个类的方法执行操作，直接访问另一个类的成员元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1091",
+    "name": "使用对象后未调用析构方法",
+    "description": "产品中的方法访问对象，但后续未调用对象的析构函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1092",
+    "name": "在多个架构层中使用相同的可调用控制元素",
+    "description": "产品在多个架构层中使用了相同的控制元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1093",
+    "name": "过于复杂的数据表示",
+    "description": "产品对其数据结构或相互关系使用了不必要复杂的内部表示。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1094",
+    "name": "数据资源的过多索引范围扫描",
+    "description": "产品对大数据表执行索引范围扫描，但扫描范围可能覆盖大量数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1095",
+    "name": "循环内更新循环条件值",
+    "description": "产品使用基于循环体内更新值的控制流条件，可能导致意外行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1096",
+    "name": "单例类实例创建未使用正确的锁或同步",
+    "description": "产品实现单例模式，但未使用适当的锁或同步机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1097",
+    "name": "可持久存储数据元素缺少关联的比较控制元素",
+    "description": "产品使用可存储数据元素，但未提供所有必要的比较函数或方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1098",
+    "name": "包含指针项但缺少正确复制控制元素的数据元素",
+    "description": "代码中的数据元素包含指针，但未提供关联的复制或构造函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1099",
+    "name": "标识符命名约定不一致",
+    "description": "产品的代码、文档等未一致使用相同的命名约定。",
+    "severity": null
+  },
+  {
+    "id": "CWE-11",
+    "name": "ASP.NET 配置错误：创建调试二进制文件",
+    "description": "调试消息帮助攻击者了解系统并规划攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-110",
+    "name": "Struts: 无对应表单字段的验证器",
+    "description": "验证字段未出现在关联的表单中，表明验证逻辑可能过时或无效。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1100",
+    "name": "系统相关功能隔离不足",
+    "description": "产品或代码未将系统依赖的功能隔离到独立的模块中。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1101",
+    "name": "生成的代码依赖运行时组件",
+    "description": "产品使用自动生成的代码，但该代码无法在无特定运行时支持的情况下执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1102",
+    "name": "依赖机器相关的数据表示",
+    "description": "代码使用依赖底层数据表示或构造的数据表示，可能降低可移植性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1103",
+    "name": "使用平台相关的第三方组件",
+    "description": "产品依赖的第三方组件在不同平台上功能不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1104",
+    "name": "使用未维护的第三方组件",
+    "description": "产品依赖的第三方组件不再由原作者或组织积极支持或维护。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1105",
+    "name": "机器相关功能封装不足",
+    "description": "产品或代码使用了机器相关的功能，但未充分封装。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1106",
+    "name": "符号常量使用不足",
+    "description": "源代码使用字面常量，但未使用符号常量，导致后期修改困难。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1107",
+    "name": "符号常量定义隔离不足",
+    "description": "源代码使用符号常量，但未将这些定义集中隔离管理。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1108",
+    "name": "过度依赖全局变量",
+    "description": "代码结构过度依赖全局变量的使用或设置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1109",
+    "name": "同一变量用于多个用途",
+    "description": "代码中的可调用块或其他元素使用同一变量存储多个不同的含义或值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-111",
+    "name": "直接使用不安全的JNI",
+    "description": "Java应用使用Java本地接口调用其他语言代码时，可能引入安全问题。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1110",
+    "name": "不完整的设计文档",
+    "description": "产品的设计文档未充分描述控制流、数据流、系统初始化等方面。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1111",
+    "name": "不完整的I/O文档",
+    "description": "产品的文档未充分定义输入、输出或系统/软件接口。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1112",
+    "name": "程序执行文档不完整",
+    "description": "文档未完整定义用于控制或影响产品执行的所有机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1113",
+    "name": "不适当的注释风格",
+    "description": "源代码中的注释风格不一致或未遵循预期标准。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1114",
+    "name": "不适当的空白风格",
+    "description": "源代码中的空白符使用不一致或未遵循预期标准。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1115",
+    "name": "源代码元素缺少标准序言",
+    "description": "源代码文件等元素未一致提供序言（头部注释）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1116",
+    "name": "源代码注释不准确",
+    "description": "源代码中的注释未准确描述或解释代码部分的功能或行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1117",
+    "name": "可调用元素的行为摘要不足",
+    "description": "函数或方法的签名及内联文档未充分描述其行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1118",
+    "name": "错误处理技术的文档不足",
+    "description": "文档未充分描述所使用的错误处理技术，如异常处理或返回码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1119",
+    "name": "过度使用无条件分支",
+    "description": "代码中使用过多无条件分支（如goto）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-112",
+    "name": "缺少XML验证",
+    "description": "产品接受来自不可信源的XML，但未依据适当的模式或约束进行验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1120",
+    "name": "代码复杂度过高",
+    "description": "代码过于复杂，通过明确定义的量化指标可测出。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1121",
+    "name": "McCabe圈复杂度过高",
+    "description": "代码的McCabe圈复杂度超过期望的最大值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1122",
+    "name": "Halstead复杂度过高",
+    "description": "代码结构使得Halstead复杂度指标超过期望最大值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1123",
+    "name": "过度使用自修改代码",
+    "description": "产品使用过多的自修改代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1124",
+    "name": "嵌套过深",
+    "description": "代码中的可调用或其他代码块嵌套/分支过深。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1125",
+    "name": "攻击面过大",
+    "description": "产品的攻击面量化测量值超过期望最大值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1126",
+    "name": "声明了过宽作用域的变量",
+    "description": "源代码在某个作用域声明变量，但仅在更窄的作用域中使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1127",
+    "name": "编译时警告或错误不足",
+    "description": "代码编译时未启用足够的警告，可能无法检测细微错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-113",
+    "name": "HTTP请求/响应拆分（CRLF序列中和不当）",
+    "description": "产品从HTTP组件接收数据，但未正确中和CRLF序列，导致请求/响应拆分。",
+    "severity": null
+  },
+  {
+    "id": "CWE-114",
+    "name": "进程控制",
+    "description": "从未可信源执行命令或加载库，或在不可信环境中执行，可能导致代码执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-115",
+    "name": "输入误解",
+    "description": "产品在安全相关上下文中错误解释来自攻击者或其他产品的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-116",
+    "name": "输出编码或转义不当",
+    "description": "产品为与其他组件通信准备结构化消息时，编码或转义不正确。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1164",
+    "name": "无关代码",
+    "description": "产品包含对执行非必要的代码（不改变状态且无副作用）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-117",
+    "name": "日志输出中和不当",
+    "description": "产品从外部输入构造日志消息，但未正确中和或错误中和特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1173",
+    "name": "验证框架使用不当",
+    "description": "产品未使用或错误使用了平台提供的输入验证框架。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1174",
+    "name": "ASP.NET配置错误：模型验证不当",
+    "description": "ASP.NET应用未使用或错误使用了模型验证框架。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1176",
+    "name": "低效的CPU计算",
+    "description": "产品执行CPU计算时使用效率低于预期的算法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1177",
+    "name": "使用被禁用的代码",
+    "description": "产品使用了明确被禁止的函数、库或第三方组件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-118",
+    "name": "索引资源访问越界（范围错误）",
+    "description": "产品未正确限制对资源边界的操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1188",
+    "name": "使用不安全默认值初始化资源",
+    "description": "产品使用预期会被更改但实际未改的不安全默认值初始化资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1189",
+    "name": "片上系统（SoC）共享资源隔离不当",
+    "description": "SoC未正确隔离可信与不可信执行域之间的共享资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-119",
+    "name": "内存缓冲区操作限制不当（缓冲区溢出）",
+    "description": "产品对内存缓冲区执行操作时，读取或写入到错误的内存位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1190",
+    "name": "引导阶段过早启用DMA设备",
+    "description": "产品在安全配置完成之前启用了直接内存访问（DMA）设备。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1191",
+    "name": "片上调试和测试接口访问控制不当",
+    "description": "芯片未正确实现访问控制，未检查用户是否有权使用调试/测试接口。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1192",
+    "name": "SoC中IP块标识符不当",
+    "description": "SoC未为其各组件提供唯一且不可变的标识符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1193",
+    "name": "在启用总线访问控制之前上电不可信执行核心",
+    "description": "产品在内存和总线访问控制启用之前，使包含不可信固件的组件上电。",
+    "severity": null
+  },
+  {
+    "id": "CWE-12",
+    "name": "ASP.NET配置错误：缺少自定义错误页",
+    "description": "ASP.NET应用必须启用自定义错误页，防止攻击者获取敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-120",
+    "name": "缓冲区复制未检查输入大小（经典缓冲区溢出）",
+    "description": "产品将输入缓冲区复制到输出缓冲区时未验证输入大小。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1204",
+    "name": "生成弱的初始化向量（IV）",
+    "description": "产品使用加密原语时依赖IV，但生成方式较弱。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1209",
+    "name": "未禁用保留位",
+    "description": "硬件设计中的保留位在生产前未禁用，可能被利用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-121",
+    "name": "栈缓冲区溢出",
+    "description": "栈缓冲区溢出是指被覆盖的缓冲区在栈上分配。",
+    "severity": null
+  },
+  {
+    "id": "CWE-122",
+    "name": "堆缓冲区溢出",
+    "description": "堆缓冲区溢出是指被覆盖的缓冲区在堆上分配。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1220",
+    "name": "访问控制粒度不足",
+    "description": "产品通过策略或特性实现访问控制，但意图禁止的访问被允许。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1221",
+    "name": "寄存器默认值或模块参数不正确",
+    "description": "硬件描述语言代码错误定义了寄存器默认值或IP参数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1222",
+    "name": "寄存器锁保护的地址区域粒度不足",
+    "description": "产品定义了由同一寄存器锁保护的大地址区域，导致过度保护。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1223",
+    "name": "写一次属性的竞争条件",
+    "description": "硬件设计中的写一次寄存器可能被不可信软件在可信组件之前编程。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1224",
+    "name": "写一次位字段限制不当",
+    "description": "硬件设计控制寄存器中的“粘滞位”或写一次位字段实现不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1229",
+    "name": "创建新兴资源",
+    "description": "产品管理资源或行为方式间接创建了新的、不同的资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-123",
+    "name": "写-写-什么条件",
+    "description": "攻击者能够向任意内存位置写入任意值的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1230",
+    "name": "通过元数据暴露敏感信息",
+    "description": "产品阻止直接访问包含敏感信息的资源，但未阻止通过元数据暴露。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1231",
+    "name": "锁位修改防止不当",
+    "description": "产品使用可信锁位限制对寄存器、地址区域或其他属性的修改，但锁位可能被绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1232",
+    "name": "电源状态转换后的锁行为不当",
+    "description": "寄存器锁位保护在设置后禁止更改配置，但某些电源状态转换可能导致锁失效。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1233",
+    "name": "缺少锁位保护的安全敏感硬件控制",
+    "description": "产品使用寄存器锁位保护机制，但未确保锁位保护所有安全敏感控制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1234",
+    "name": "硬件内部或调试模式允许覆盖锁",
+    "description": "系统配置保护可能在调试模式下被绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1235",
+    "name": "性能关键操作中自动装箱和拆箱使用不当",
+    "description": "代码使用装箱基本类型，可能引入性能问题。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1236",
+    "name": "CSV文件中公式元素中和不当",
+    "description": "产品将用户提供的信息保存为CSV文件，但未正确中和可能被电子表格软件执行的公式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1239",
+    "name": "硬件寄存器清零不当",
+    "description": "硬件产品在用户退出或释放寄存器后未正确清除内置寄存器中的敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-124",
+    "name": "缓冲区下溢（Buffer Underflow）",
+    "description": "产品使用索引或指针引用缓冲区之前的位置进行写入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1240",
+    "name": "使用风险实现方式的密码原语",
+    "description": "为了满足密码原语需求，产品实现了密码算法，但实现方式风险较高。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1241",
+    "name": "随机数生成器使用可预测算法",
+    "description": "设备使用的算法可预测，生成的数字为伪随机。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1242",
+    "name": "包含未文档化的特性或“鸡位”",
+    "description": "设备包含鸡位或未文档化功能，可能为未授权访问提供入口。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1243",
+    "name": "调试期间敏感非易失信息未受保护",
+    "description": "调试期间对保险丝中存储的安全敏感信息的访问未加限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1244",
+    "name": "内部资产暴露给不安全的调试访问级别或状态",
+    "description": "产品使用支持多访问级别的物理调试/测试接口，但未正确配置访问级别。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1245",
+    "name": "硬件逻辑中有限状态机（FSM）不当",
+    "description": "硬件逻辑中FSM存在错误，允许攻击者将系统置于未授权状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1246",
+    "name": "有限写入非易失性存储器写入处理不当",
+    "description": "产品未实现或错误实现了有限写入NVM的磨损均衡操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1247",
+    "name": "电压和时钟毛刺防护不当",
+    "description": "设备未包含或错误实现了用于检测和缓解电压/时钟毛刺的电路或传感器。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1248",
+    "name": "硬件逻辑中的半导体缺陷影响安全性",
+    "description": "安全相关硬件模块包含半导体制造缺陷。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1249",
+    "name": "应用级管理工具与底层操作系统视图不一致",
+    "description": "产品为管理员提供管理部分操作系统的应用，但视图与实际不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-125",
+    "name": "越界读取",
+    "description": "产品读取到预期缓冲区末尾之后或开头之前。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1250",
+    "name": "共享状态的独立表示之间一致性维护不当",
+    "description": "产品有多个分布式组件或子系统，它们维护共享状态的独立表示，但一致性维护不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1251",
+    "name": "镜像区域值不同",
+    "description": "产品的架构镜像了区域，但未确保内容始终同步。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1252",
+    "name": "CPU硬件未配置为支持写和执行互斥",
+    "description": "CPU未配置为提供写和执行互斥的硬件支持。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1253",
+    "name": "保险丝值选择错误",
+    "description": "用于将系统设置为安全状态的逻辑电平依赖未烧断的保险丝。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1254",
+    "name": "比较逻辑粒度错误",
+    "description": "产品的比较逻辑分多步执行，而非整个字符串或数据块。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1255",
+    "name": "比较逻辑易受功耗旁路攻击",
+    "description": "设备实时功耗可在安全令牌评估期间被监控，泄露信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1256",
+    "name": "软件接口对硬件功能的限制不当",
+    "description": "产品为电源和时钟等功能提供软件可控的设备功能，但限制不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1257",
+    "name": "镜像或别名内存区域的访问控制不当",
+    "description": "硬件设计中的别名或镜像内存区域可能具有不一致的读/写权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1258",
+    "name": "因未清除调试信息导致敏感系统信息暴露",
+    "description": "硬件未完全清除安全敏感值（如密钥），导致调试信息残留。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1259",
+    "name": "安全令牌分配限制不当",
+    "description": "SoC实现了安全令牌机制，但分配限制不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-126",
+    "name": "缓冲区过度读取",
+    "description": "产品使用索引或指针引用缓冲区之外的位置进行读取。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1260",
+    "name": "受保护内存区域重叠处理不当",
+    "description": "产品允许地址区域重叠，可能导致内存保护绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1261",
+    "name": "单粒子翻转处理不当",
+    "description": "硬件逻辑未有效处理单粒子翻转（SEU）事件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1262",
+    "name": "寄存器接口访问控制不当",
+    "description": "产品使用内存映射I/O寄存器作为硬件功能接口，但访问控制不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1263",
+    "name": "物理访问控制不当",
+    "description": "产品设计为限制特定信息访问，但物理访问控制不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1264",
+    "name": "控制与数据通道去同步不安全的硬件逻辑",
+    "description": "硬件逻辑在安全检查完成之前错误地转发数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1265",
+    "name": "通过嵌套调用无意中重入非重入代码",
+    "description": "产品调用了被认为可重入的代码，但该代码通过嵌套调用无意中重入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1266",
+    "name": "已退役设备敏感数据擦除不当",
+    "description": "产品未提供足够的能力让管理员从退役设备中删除敏感数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1267",
+    "name": "策略使用过时的编码",
+    "description": "产品使用过时的编码机制实现访问控制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1268",
+    "name": "控制和数据代理之间的策略权限分配不一致",
+    "description": "产品的硬件强制访问控制在处理不同代理时权限分配不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1269",
+    "name": "产品以非发布配置发布",
+    "description": "产品以预生产或制造配置发布市场。",
+    "severity": null
+  },
+  {
+    "id": "CWE-127",
+    "name": "缓冲区下读取",
+    "description": "产品使用索引或指针引用缓冲区之前的位置进行读取。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1270",
+    "name": "生成不正确的安全令牌",
+    "description": "产品实现了安全令牌机制，但生成的令牌不正确。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1271",
+    "name": "复位时保存安全设置的寄存器未初始化",
+    "description": "安全关键逻辑在复位时未设置为已知值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1272",
+    "name": "调试/电源状态转换前未清除敏感信息",
+    "description": "产品执行电源或调试状态转换，但未清除敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1273",
+    "name": "设备解锁凭据共享",
+    "description": "解锁设备的凭据在多方间共享，可能暴露安全风险。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1274",
+    "name": "包含启动代码的易失性内存访问控制不当",
+    "description": "产品执行安全启动，从NVM传输引导加载程序到易失性内存，但访问控制不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1275",
+    "name": "敏感Cookie的SameSite属性设置不当",
+    "description": "敏感Cookie未设置SameSite属性，或使用了不安全的取值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1276",
+    "name": "硬件子块错误连接到父系统",
+    "description": "硬件IP与父系统设计之间的信号连接错误，导致安全问题。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1277",
+    "name": "固件不可更新",
+    "description": "产品未向用户提供更新或修补固件的能力，无法修复漏洞。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1278",
+    "name": "缺少针对IC成像技术的硬件逆向工程防护",
+    "description": "硬件中存储的信息可能被具备IC成像能力的攻击者恢复。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1279",
+    "name": "在支持单元就绪前运行密码操作",
+    "description": "在确保支持输入准备就绪之前执行密码操作，可能导致错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-128",
+    "name": "回绕错误",
+    "description": "值超出其类型最大值时发生回绕。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1280",
+    "name": "访问资产后才执行访问控制检查",
+    "description": "产品的硬件访问控制检查发生在资产被访问之后。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1281",
+    "name": "处理器指令序列导致意外行为",
+    "description": "特定处理器指令组合导致锁定处理器或意外行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1282",
+    "name": "假定不可变数据存储在可写内存中",
+    "description": "不可变数据（如引导加载程序、设备标识符）被存储在可写内存中。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1283",
+    "name": "可变的证明或测量报告数据",
+    "description": "用于验证启动流程的证明或测量报告数据的寄存器内容可被修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1284",
+    "name": "输入中指定数量验证不当",
+    "description": "产品接收应指定数量（如大小或长度）的输入，但未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1285",
+    "name": "输入中指定索引/位置/偏移量验证不当",
+    "description": "产品接收应指定可索引资源中位置、索引或偏移量的输入，但未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1286",
+    "name": "输入句法正确性验证不当",
+    "description": "产品接收应为良好格式（符合句法）的输入，但未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1287",
+    "name": "输入指定类型验证不当",
+    "description": "产品接收应为特定类型的输入，但未正确验证或错误验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1288",
+    "name": "输入内部一致性验证不当",
+    "description": "产品接收包含多个元素或字段的复杂输入，这些元素需保持一致，但验证不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1289",
+    "name": "输入中不安全等价性验证不当",
+    "description": "产品接收用作资源标识符的输入值，但未验证其安全性等价性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-129",
+    "name": "数组索引验证不当",
+    "description": "产品使用不可信输入计算或使用数组索引，但未正确验证索引是否在范围内。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1290",
+    "name": "安全标识符解码错误",
+    "description": "产品实现了解码机制将总线事务信号映射到安全标识符，但解码有误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1291",
+    "name": "公钥重复用于签名调试和生产代码",
+    "description": "同一个公钥被用于签名调试代码和生产代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1292",
+    "name": "安全标识符转换错误",
+    "description": "产品实现了转换机制将总线事务信号映射到安全标识符，但转换有误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1293",
+    "name": "多独立数据源关联缺失",
+    "description": "产品仅依赖单一数据源，无法检测对手是否篡改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1294",
+    "name": "不安全的标识符机制",
+    "description": "SoC实现了安全标识符机制，但机制本身不安全。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1295",
+    "name": "调试消息泄露不必要信息",
+    "description": "产品未能充分防止调试消息泄露不必要且可能敏感的系统信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1296",
+    "name": "调试组件的链接或粒度错误",
+    "description": "产品的调试组件包含错误的链接或粒度。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1297",
+    "name": "设备上未受保护的机密信息可被OSAT供应商访问",
+    "description": "产品未充分保护设备上的机密信息，使其可被OSAT供应商访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1298",
+    "name": "硬件逻辑包含竞争条件",
+    "description": "硬件逻辑中的竞争条件破坏系统安全保证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1299",
+    "name": "替代硬件接口缺少保护机制",
+    "description": "对受访问控制保护的资产存在替代路径（如未受保护的扫描链），但缺少保护。",
+    "severity": null
+  },
+  {
+    "id": "CWE-13",
+    "name": "ASP.NET配置错误：配置文件中的密码",
+    "description": "在配置文件中存储明文密码，允许能读取该文件的人访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-130",
+    "name": "长度参数不一致处理不当",
+    "description": "产品解析格式化消息或结构时，未正确处理长度参数不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1300",
+    "name": "物理旁路保护不足",
+    "description": "设备未包含足够的保护机制来防止物理旁路攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1301",
+    "name": "硬件组件内数据删除不充分或不完整",
+    "description": "产品的数据删除过程未完全删除所有数据，可能残留敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1302",
+    "name": "SoC实体事务中缺少源标识符",
+    "description": "产品实现了安全标识符机制，但事务中缺少源标识符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1303",
+    "name": "微架构资源共享非透明",
+    "description": "跨执行上下文共享的硬件结构（如缓存和分支预测器）可能违反安全边界。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1304",
+    "name": "电源保存/恢复操作期间硬件配置状态完整性保持不当",
+    "description": "产品执行电源保存/恢复操作，但未确保配置状态完整性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-131",
+    "name": "缓冲区大小计算错误",
+    "description": "产品计算分配缓冲区所需大小时出错。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1310",
+    "name": "缺少修补ROM代码的能力",
+    "description": "无法修补ROM代码可能导致系统或SoC在发现漏洞后仍处于脆弱状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1311",
+    "name": "桥接器安全属性转换不当",
+    "description": "桥接器将安全属性从可信转换到不可信或反之，但转换错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1312",
+    "name": "片上结构防火墙中镜像区域保护缺失",
+    "description": "片上结构防火墙保护主地址区域，但未保护任何镜像区域。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1313",
+    "name": "硬件允许在运行时激活测试或调试逻辑",
+    "description": "硬件在运行时允许激活测试/调试逻辑，可能被攻击者利用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1314",
+    "name": "参数数据值缺少写保护",
+    "description": "设备未对传感器参数数据值进行写保护，可能被篡改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1315",
+    "name": "结构端点总线控制能力设置不当",
+    "description": "总线控制器在端点中启用了允许响应设备控制事务的位，但设置不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1316",
+    "name": "结构地址映射允许受保护和未受保护区域重叠",
+    "description": "片上结构地址映射中受保护和未受保护区域重叠，允许绕过保护。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1317",
+    "name": "结构桥中的访问控制不当",
+    "description": "产品使用结构桥在两个IP块之间进行事务，但访问控制不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1318",
+    "name": "片上结构或总线缺少对安全特性的支持",
+    "description": "片上结构或总线未支持或未配置为支持特权分离等安全特性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1319",
+    "name": "电磁故障注入（EM-FI）防护不当",
+    "description": "设备易受电磁故障注入攻击，导致内部信息泄露。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1320",
+    "name": "对外发错误消息和警报信号保护不当",
+    "description": "不可信代理可禁用超出限制或响应机制的警报信号。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1321",
+    "name": "对象原型属性修改控制不当（原型污染）",
+    "description": "产品接收上游输入，指定要初始化的属性，导致原型污染。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1322",
+    "name": "在单线程非阻塞上下文中使用阻塞代码",
+    "description": "产品使用依赖单线程的非阻塞模型，但调用了阻塞代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1323",
+    "name": "敏感跟踪数据管理不当",
+    "description": "从SoC多个来源收集的跟踪数据存储在未受保护的位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1325",
+    "name": "顺序内存分配控制不当",
+    "description": "产品管理一组对象或资源，并对每个对象单独分配内存，可能导致碎片。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1326",
+    "name": "硬件中缺少不可变信任根",
+    "description": "缺少硬件不可变信任根可能导致绕过安全启动或执行恶意代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1327",
+    "name": "绑定到不受限制的IP地址",
+    "description": "产品将数据库服务器、云服务等绑定到0.0.0.0地址，导致可被任意来源访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1328",
+    "name": "安全版本号可变为旧版本",
+    "description": "硬件中安全版本号可变，允许降级（回滚）攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1329",
+    "name": "依赖不可更新的组件",
+    "description": "产品包含无法更新或修补的组件，无法修复漏洞。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1330",
+    "name": "内存擦除后残留数据可读",
+    "description": "存储在存储电路中的机密信息在清除或删除后仍可读或可恢复。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1331",
+    "name": "片上网络（NoC）中共享资源隔离不当",
+    "description": "NoC未正确隔离片上结构及内部资源，导致信息泄露。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1332",
+    "name": "故障导致指令跳过的处理不当",
+    "description": "设备缺少或错误实现了检测和缓解指令跳过故障的电路或传感器。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1333",
+    "name": "正则表达式效率低下",
+    "description": "产品使用在特定输入下计算复杂度极高的正则表达式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1334",
+    "name": "未授权错误注入可降低硬件冗余",
+    "description": "未授权代理可向冗余块注入错误，剥夺系统冗余。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1335",
+    "name": "整数位移错误",
+    "description": "整数被要求左移或右移负数或大于等于位宽的值，导致未定义行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1336",
+    "name": "模板引擎中特殊元素中和不当",
+    "description": "产品使用模板引擎处理外部输入，但未正确中和特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1338",
+    "name": "硬件过热防护不当",
+    "description": "硬件设备缺少或不充分的过热保护措施。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1339",
+    "name": "实数精度或准确度不足",
+    "description": "产品处理实数时，表示精度不足导致计算结果错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-134",
+    "name": "使用外部控制的格式字符串",
+    "description": "产品使用接受格式字符串作为参数的函数，但格式字符串来自外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1341",
+    "name": "同一资源或句柄多次释放",
+    "description": "产品尝试多次关闭或释放资源或句柄，且之间未成功重新获取。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1342",
+    "name": "瞬态执行后通过微架构状态泄露信息",
+    "description": "处理器在错误的微码辅助或预测执行后未正确清除微架构状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-135",
+    "name": "多字节字符串长度计算错误",
+    "description": "产品未正确计算包含宽字符或多字节字符的字符串长度。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1351",
+    "name": "极端寒冷环境下硬件行为处理不当",
+    "description": "硬件设备或固件缺少或具有错误的极端寒冷环境防护措施。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1357",
+    "name": "依赖不够可信的组件",
+    "description": "产品由多个独立组件构成，但使用了不够可信的组件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-138",
+    "name": "特殊元素中和不当（注入）",
+    "description": "产品从上游组件接收输入，但未正确中和特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1384",
+    "name": "物理或环境条件处理不当",
+    "description": "产品未正确处理意外发生的物理或环境条件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1385",
+    "name": "WebSocket中缺少来源验证",
+    "description": "产品使用WebSocket，但未正确验证数据或通信的来源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1386",
+    "name": "Windows联接/挂载点上的不安全操作",
+    "description": "产品打开文件或目录，但未防止名称被关联到不安全的目标。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1389",
+    "name": "不同基数数字解析错误",
+    "description": "产品将数字输入解析为十进制，但未考虑前缀（如0x）导致错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1390",
+    "name": "弱认证",
+    "description": "产品使用认证机制限制访问，但机制过弱。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1391",
+    "name": "使用弱凭据",
+    "description": "产品使用可被轻易计算或猜测的弱凭据（如默认密钥或硬编码密码）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1392",
+    "name": "使用默认凭据",
+    "description": "产品为潜在关键功能使用默认凭据（如密码或密钥）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1393",
+    "name": "使用默认密码",
+    "description": "产品为关键功能使用默认密码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1394",
+    "name": "使用默认加密密钥",
+    "description": "产品为关键功能使用默认加密密钥。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1395",
+    "name": "依赖易受攻击的第三方组件",
+    "description": "产品依赖包含已知漏洞的第三方组件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-14",
+    "name": "编译器移除清除缓冲区的代码",
+    "description": "源代码中清除了敏感内存，但编译器优化后可能未执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-140",
+    "name": "分隔符中和不当",
+    "description": "产品未正确中和或错误中和分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-141",
+    "name": "参数/参数分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和参数分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1419",
+    "name": "资源初始化错误",
+    "description": "产品尝试初始化资源但未正确完成，可能导致资源处于不安全状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-142",
+    "name": "值分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和值分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1420",
+    "name": "瞬态执行期间敏感信息泄露",
+    "description": "处理器事件或预测可能导致错误操作（或带错误数据的正确操作），泄露微架构状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1421",
+    "name": "瞬态执行期间共享微架构结构中敏感信息泄露",
+    "description": "处理器事件可能允许瞬态操作访问架构限制的数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1422",
+    "name": "瞬态执行期间数据转发错误导致敏感信息泄露",
+    "description": "处理器事件或预测可能将错误或过时数据转发给瞬态操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1423",
+    "name": "共享微架构预测器状态影响瞬态执行导致敏感信息泄露",
+    "description": "共享微架构预测器状态可能允许代码影响跨安全上下文的瞬态执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1426",
+    "name": "生成式AI输出验证不当",
+    "description": "产品调用生成式AI/ML组件，其行为和输出无法直接受控，但未充分验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1427",
+    "name": "用于LLM提示的输入中和不当",
+    "description": "产品使用外部提供的数据构建大型语言模型的提示，但未正确中和。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1428",
+    "name": "依赖HTTP而非HTTPS",
+    "description": "产品在HTTPS可用时仍提供或依赖HTTP通信。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1429",
+    "name": "硬件接口未执行操作时缺少安全相关反馈",
+    "description": "产品硬件接口在未执行操作时静默丢弃操作，缺少反馈。",
+    "severity": null
+  },
+  {
+    "id": "CWE-143",
+    "name": "记录分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和记录分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1431",
+    "name": "将中间密码状态/结果驱动到硬件模块输出",
+    "description": "产品使用实现密码算法的硬件模块，将敏感中间值输出到外部。",
+    "severity": null
+  },
+  {
+    "id": "CWE-1434",
+    "name": "生成式AI/ML模型推理参数设置不安全",
+    "description": "产品依赖生成式AI/ML模型，但配置了不安全的推理参数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-144",
+    "name": "行分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和行分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-145",
+    "name": "节分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和节分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-146",
+    "name": "表达式/命令分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和表达式或命令分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-147",
+    "name": "输入终止符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和输入终止符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-148",
+    "name": "输入前导符中和不当",
+    "description": "产品未正确处理前导字符或序列（前导符）缺失或多余的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-149",
+    "name": "引号语法中和不当",
+    "description": "注入的引号可被利用来破坏系统解析。",
+    "severity": null
+  },
+  {
+    "id": "CWE-15",
+    "name": "外部控制系统或配置设置",
+    "description": "一个或多个系统设置或配置元素可被用户外部控制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-150",
+    "name": "转义、元或控制序列中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和转义、元或控制序列。",
+    "severity": null
+  },
+  {
+    "id": "CWE-151",
+    "name": "注释分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和注释分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-152",
+    "name": "宏符号中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和宏符号。",
+    "severity": null
+  },
+  {
+    "id": "CWE-153",
+    "name": "替换字符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和替换字符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-154",
+    "name": "变量名分隔符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和变量名分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-155",
+    "name": "通配符或匹配符号中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和通配符或匹配符号。",
+    "severity": null
+  },
+  {
+    "id": "CWE-156",
+    "name": "空白符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和空白符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-157",
+    "name": "成对分隔符净化失败",
+    "description": "产品未正确处理标记开始和结束的成对分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-158",
+    "name": "空字节或NUL字符中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和空字节或NUL字符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-159",
+    "name": "无效使用特殊元素处理不当",
+    "description": "产品未正确过滤、移除、引用或管理特殊元素的无效使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-160",
+    "name": "前导特殊元素中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和前导特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-161",
+    "name": "多个前导特殊元素中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和多个前导特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-162",
+    "name": "尾随特殊元素中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和尾随特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-163",
+    "name": "多个尾随特殊元素中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和多个尾随特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-164",
+    "name": "内部特殊元素中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和内部特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-165",
+    "name": "多个内部特殊元素中和不当",
+    "description": "产品从上游组件接收输入，但未正确中和多个内部特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-166",
+    "name": "缺少特殊元素处理不当",
+    "description": "产品从上游组件接收输入，但未正确处理缺少的特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-167",
+    "name": "额外特殊元素处理不当",
+    "description": "产品从上游组件接收输入，但未正确处理额外的特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-168",
+    "name": "不一致特殊元素处理不当",
+    "description": "产品未正确处理输入中两个或多个特殊元素之间的不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-170",
+    "name": "空终止不当",
+    "description": "产品未正确终止字符串或数组，或使用错误的终止方式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-172",
+    "name": "编码错误",
+    "description": "产品未正确编码或解码数据，导致意外值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-173",
+    "name": "替代编码处理不当",
+    "description": "产品未正确处理使用替代编码（对输入有效的编码）的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-174",
+    "name": "同一数据双重解码",
+    "description": "产品对同一输入解码两次，可能削弱任何保护机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-175",
+    "name": "混合编码处理不当",
+    "description": "产品未正确处理同一输入使用多种不同（混合）编码的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-176",
+    "name": "Unicode编码处理不当",
+    "description": "产品未正确处理包含Unicode编码的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-177",
+    "name": "URL编码（十六进制编码）处理不当",
+    "description": "产品未正确处理全部或部分输入被URL编码的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-178",
+    "name": "大小写敏感性处理不当",
+    "description": "产品在访问或确定资源时未正确处理大小写差异。",
+    "severity": null
+  },
+  {
+    "id": "CWE-179",
+    "name": "行为顺序错误：过早验证",
+    "description": "产品在应用修改输入的保护机制之前进行验证，可能导致绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-180",
+    "name": "行为顺序错误：规范化前验证",
+    "description": "产品在规范化之前验证输入，导致无法检测规范化后的数据攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-181",
+    "name": "行为顺序错误：过滤前验证",
+    "description": "产品在过滤之前验证数据，导致无法检测过滤后的数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-182",
+    "name": "数据折叠为不安全值",
+    "description": "产品以导致数据被简化或“折叠”为不安全值的方式过滤数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-183",
+    "name": "允许列表过于宽松",
+    "description": "产品实现的保护机制依赖允许列表，但列表过于宽松。",
+    "severity": null
+  },
+  {
+    "id": "CWE-184",
+    "name": "禁用列表不完整",
+    "description": "产品实现的保护机制依赖禁用列表，但列表不完整。",
+    "severity": null
+  },
+  {
+    "id": "CWE-185",
+    "name": "不正确的正则表达式",
+    "description": "产品指定的正则表达式导致数据被错误匹配或比较。",
+    "severity": null
+  },
+  {
+    "id": "CWE-186",
+    "name": "正则表达式过于严格",
+    "description": "正则表达式过于严格，导致危险值无法被检测。",
+    "severity": null
+  },
+  {
+    "id": "CWE-187",
+    "name": "部分字符串比较",
+    "description": "产品执行比较时仅检查部分因素，未完整判断。",
+    "severity": null
+  },
+  {
+    "id": "CWE-188",
+    "name": "依赖数据/内存布局",
+    "description": "产品对协议数据或内存布局做出错误假设。",
+    "severity": null
+  },
+  {
+    "id": "CWE-190",
+    "name": "整数溢出或回绕",
+    "description": "产品执行计算时产生整数溢出或回绕。",
+    "severity": null
+  },
+  {
+    "id": "CWE-191",
+    "name": "整数下溢（回绕）",
+    "description": "产品将一个值减去另一个值，结果小于最小值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-192",
+    "name": "整数强制转换错误",
+    "description": "整数强制转换相关的一系列缺陷。",
+    "severity": null
+  },
+  {
+    "id": "CWE-193",
+    "name": "差一错误",
+    "description": "产品计算或使用错误的最大/最小值，偏差为1。",
+    "severity": null
+  },
+  {
+    "id": "CWE-194",
+    "name": "意外符号扩展",
+    "description": "产品对数值执行操作导致符号扩展。",
+    "severity": null
+  },
+  {
+    "id": "CWE-195",
+    "name": "有符号到无符号转换错误",
+    "description": "产品使用有符号基本类型并强制转换为无符号，可能产生意外值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-196",
+    "name": "无符号到有符号转换错误",
+    "description": "产品使用无符号基本类型并强制转换为有符号，可能产生意外值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-197",
+    "name": "数字截断错误",
+    "description": "基本类型强制转换为更小类型时丢失数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-198",
+    "name": "字节顺序使用错误",
+    "description": "产品从上游组件接收输入，但未考虑字节顺序。",
+    "severity": null
+  },
+  {
+    "id": "CWE-20",
+    "name": "输入验证不当",
+    "description": "产品接收输入或数据，但未正确验证其合法性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-200",
+    "name": "敏感信息泄露给未授权角色",
+    "description": "产品将敏感信息暴露给未明确授权访问的角色。",
+    "severity": null
+  },
+  {
+    "id": "CWE-201",
+    "name": "将敏感信息插入发送数据",
+    "description": "代码向其他角色传输数据时，部分数据包含敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-202",
+    "name": "通过数据查询泄露敏感信息",
+    "description": "在试图保密信息时，攻击者常能通过查询推断出部分信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-203",
+    "name": "可观察差异",
+    "description": "产品在不同情况下行为或响应不同，导致内部状态可被观察。",
+    "severity": null
+  },
+  {
+    "id": "CWE-204",
+    "name": "可观察响应差异",
+    "description": "产品对请求的响应差异揭示内部状态信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-205",
+    "name": "可观察行为差异",
+    "description": "产品行为模式揭示重要差异，可能被未授权角色观察到。",
+    "severity": null
+  },
+  {
+    "id": "CWE-206",
+    "name": "可观察内部行为差异",
+    "description": "产品组合多个行为产生单一结果，但单个行为可被观察。",
+    "severity": null
+  },
+  {
+    "id": "CWE-207",
+    "name": "与等价产品的可观察行为差异",
+    "description": "产品运行环境中其存在或身份应保密，但行为差异暴露了身份。",
+    "severity": null
+  },
+  {
+    "id": "CWE-208",
+    "name": "可观察时序差异",
+    "description": "产品中两个独立操作完成时间不同，揭示敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-209",
+    "name": "错误消息包含敏感信息",
+    "description": "产品生成的错误消息包含环境、用户或数据等敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-210",
+    "name": "自身生成的错误消息包含敏感信息",
+    "description": "产品自身产生包含敏感信息的诊断或错误消息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-211",
+    "name": "外部生成的错误消息包含敏感信息",
+    "description": "产品执行操作触发外部诊断或错误消息，且未过滤敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-212",
+    "name": "存储或传输前敏感信息移除不当",
+    "description": "产品存储、传输或共享资源时包含敏感信息，但未正确移除。",
+    "severity": null
+  },
+  {
+    "id": "CWE-213",
+    "name": "因策略不兼容导致敏感信息泄露",
+    "description": "产品预期功能按照设计策略向某些角色暴露信息，但与其他策略不兼容。",
+    "severity": null
+  },
+  {
+    "id": "CWE-214",
+    "name": "使用可见敏感信息调用进程",
+    "description": "进程被调用时带有敏感的命令行参数、环境变量等。",
+    "severity": null
+  },
+  {
+    "id": "CWE-215",
+    "name": "调试代码中插入敏感信息",
+    "description": "产品将敏感信息插入调试代码，可能暴露信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-219",
+    "name": "Web根目录下存储敏感文件",
+    "description": "产品将敏感数据存储在Web文档根目录下，访问控制不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-22",
+    "name": "路径遍历（路径名限制不当）",
+    "description": "产品使用外部输入构造路径名，意图限制在特定目录内，但未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-220",
+    "name": "FTP根目录下存储敏感文件",
+    "description": "产品将敏感数据存储在FTP服务器根目录下，访问控制不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-221",
+    "name": "信息丢失或遗漏",
+    "description": "产品未记录或不当记录安全相关信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-222",
+    "name": "安全相关信息截断",
+    "description": "产品截断安全相关信息的显示、记录或处理。",
+    "severity": null
+  },
+  {
+    "id": "CWE-223",
+    "name": "安全相关信息遗漏",
+    "description": "产品未记录或显示识别事件源或行为的重要信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-224",
+    "name": "通过替代名称隐藏安全相关信息",
+    "description": "产品按受影响实体的替代名称记录安全相关信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-225",
+    "name": "已弃用：通用信息管理问题",
+    "description": "见CWE-199。",
+    "severity": null
+  },
+  {
+    "id": "CWE-226",
+    "name": "资源重用前未移除敏感信息",
+    "description": "产品释放内存或文件等资源以供重用，但未清除敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-228",
+    "name": "句法无效结构处理不当",
+    "description": "产品未处理或错误处理句法不合规的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-229",
+    "name": "值处理不当",
+    "description": "产品未正确处理参数、字段或参数值的数量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-23",
+    "name": "相对路径遍历",
+    "description": "产品使用外部输入构造路径名，应在受限目录内，但允许相对路径跳出。",
+    "severity": null
+  },
+  {
+    "id": "CWE-230",
+    "name": "缺失值处理不当",
+    "description": "产品未处理或错误处理缺少参数、字段或参数名的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-231",
+    "name": "额外值处理不当",
+    "description": "产品未处理或错误处理提供多于预期值的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-232",
+    "name": "未定义值处理不当",
+    "description": "产品未处理或错误处理未定义或不支持的值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-233",
+    "name": "参数处理不当",
+    "description": "产品未正确处理参数、字段或参数数量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-234",
+    "name": "缺少参数处理失败",
+    "description": "如果向函数传入过少参数，函数仍会弹出预期数量的参数，可能导致错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-235",
+    "name": "额外参数处理不当",
+    "description": "产品未处理或错误处理多余参数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-236",
+    "name": "未定义参数处理不当",
+    "description": "产品未处理或错误处理特定参数未定义的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-237",
+    "name": "结构元素处理不当",
+    "description": "产品未处理或错误处理与复杂结构相关的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-238",
+    "name": "不完整结构元素处理不当",
+    "description": "产品未处理或错误处理结构元素不完整的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-239",
+    "name": "不完整元素处理失败",
+    "description": "产品未正确处理元素不完全指定的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-24",
+    "name": "路径遍历：'../filedir'",
+    "description": "产品使用外部输入构造路径名，包含'../'导致目录遍历。",
+    "severity": null
+  },
+  {
+    "id": "CWE-240",
+    "name": "不一致结构元素处理不当",
+    "description": "产品未处理或错误处理两个或多个结构元素应保持一致的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-241",
+    "name": "意外数据类型处理不当",
+    "description": "产品未处理或错误处理特定元素类型与预期不符的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-242",
+    "name": "使用固有危险函数",
+    "description": "产品调用无法保证安全工作的函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-243",
+    "name": "创建chroot监狱未更改工作目录",
+    "description": "产品使用chroot()创建监狱，但未更改工作目录，可能导致逃逸。",
+    "severity": null
+  },
+  {
+    "id": "CWE-244",
+    "name": "释放前堆内存清除不当（堆检查）",
+    "description": "使用realloc()调整缓冲区大小时可能泄露敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-245",
+    "name": "J2EE不良实践：直接管理连接",
+    "description": "J2EE应用直接管理连接，而未使用容器连接管理。",
+    "severity": null
+  },
+  {
+    "id": "CWE-246",
+    "name": "J2EE不良实践：直接使用套接字",
+    "description": "J2EE应用直接使用套接字，而非框架方法调用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-248",
+    "name": "未捕获异常",
+    "description": "函数抛出异常但未被捕获。",
+    "severity": null
+  },
+  {
+    "id": "CWE-25",
+    "name": "路径遍历：'/../filedir'",
+    "description": "产品使用外部输入构造路径名，包含'/../'导致目录遍历。",
+    "severity": null
+  },
+  {
+    "id": "CWE-250",
+    "name": "以不必要的权限执行",
+    "description": "产品以高于最低要求的权限执行操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-252",
+    "name": "未检查返回值",
+    "description": "产品未检查函数返回值，导致无法检测错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-253",
+    "name": "函数返回值检查错误",
+    "description": "产品错误检查返回值，无法检测错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-256",
+    "name": "明文存储密码",
+    "description": "产品在内存或文件等资源中以明文存储密码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-257",
+    "name": "以可恢复格式存储密码",
+    "description": "密码以可恢复格式存储，易遭重用攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-258",
+    "name": "配置文件中空密码",
+    "description": "使用空字符串作为密码是不安全的。",
+    "severity": null
+  },
+  {
+    "id": "CWE-259",
+    "name": "使用硬编码密码",
+    "description": "产品包含硬编码密码，用于自身入站认证或外部组件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-26",
+    "name": "路径遍历：'/dir/../filename'",
+    "description": "产品使用外部输入构造路径名，包含'/dir/../filename'模式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-260",
+    "name": "配置文件中的密码",
+    "description": "产品将密码存储在可能被未授权角色访问的配置文件中。",
+    "severity": null
+  },
+  {
+    "id": "CWE-261",
+    "name": "密码弱编码",
+    "description": "使用简单的编码混淆密码并不安全。",
+    "severity": null
+  },
+  {
+    "id": "CWE-262",
+    "name": "未使用密码老化",
+    "description": "产品未设置密码老化机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-263",
+    "name": "密码老化过期时间过长",
+    "description": "产品支持密码老化，但过期时间太长。",
+    "severity": null
+  },
+  {
+    "id": "CWE-266",
+    "name": "权限分配错误",
+    "description": "产品错误地给特定角色分配权限，造成非预期的权限范围。",
+    "severity": null
+  },
+  {
+    "id": "CWE-267",
+    "name": "权限定义了不安全操作",
+    "description": "特定权限、角色或能力可用于执行未授权操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-268",
+    "name": "权限链",
+    "description": "两个不同的权限、角色或能力组合后允许越权操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-269",
+    "name": "权限管理不当",
+    "description": "产品未正确分配、修改、跟踪或检查角色权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-27",
+    "name": "路径遍历：'dir/../../filename'",
+    "description": "产品使用外部输入构造路径名，包含多层上级目录。",
+    "severity": null
+  },
+  {
+    "id": "CWE-270",
+    "name": "权限上下文切换错误",
+    "description": "产品在切换不同上下文时未正确管理权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-271",
+    "name": "权限降级/降低错误",
+    "description": "产品在将资源控制权交给不具备权限的角色时未正确降权。",
+    "severity": null
+  },
+  {
+    "id": "CWE-272",
+    "name": "最小权限违反",
+    "description": "执行chroot()等操作所需的提升权限应在操作后立即丢弃。",
+    "severity": null
+  },
+  {
+    "id": "CWE-273",
+    "name": "权限降级检查不当",
+    "description": "产品尝试降权但未检查或错误检查是否成功。",
+    "severity": null
+  },
+  {
+    "id": "CWE-274",
+    "name": "权限不足处理不当",
+    "description": "产品未处理或错误处理权限不足的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-276",
+    "name": "默认权限错误",
+    "description": "安装时文件权限被设置为允许任何人修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-277",
+    "name": "不安全的继承权限",
+    "description": "产品定义了不安全的权限，并由其创建的对象继承。",
+    "severity": null
+  },
+  {
+    "id": "CWE-278",
+    "name": "不安全保留的继承权限",
+    "description": "产品在复制文件等操作时继承了不安全的权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-279",
+    "name": "执行时分配权限错误",
+    "description": "产品在执行时以违反预期安全策略的方式设置对象权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-28",
+    "name": "路径遍历：'..\\filedir'",
+    "description": "产品使用外部输入构造路径名，包含'..\\'导致目录遍历。",
+    "severity": null
+  },
+  {
+    "id": "CWE-280",
+    "name": "权限或特权不足处理不当",
+    "description": "产品未处理或错误处理访问资源权限不足的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-281",
+    "name": "权限保留不当",
+    "description": "产品在复制、恢复或共享对象时未正确保留权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-282",
+    "name": "所有权管理不当",
+    "description": "产品为对象分配了错误的所有权，或未正确验证所有权。",
+    "severity": null
+  },
+  {
+    "id": "CWE-283",
+    "name": "未经验证的所有权",
+    "description": "产品未正确验证关键资源归正确所有者所有。",
+    "severity": null
+  },
+  {
+    "id": "CWE-284",
+    "name": "访问控制不当",
+    "description": "产品未正确限制未授权角色对资源的访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-285",
+    "name": "授权不当",
+    "description": "产品在角色尝试访问资源或执行操作时未执行或错误执行授权检查。",
+    "severity": null
+  },
+  {
+    "id": "CWE-286",
+    "name": "用户管理错误",
+    "description": "产品未正确管理其环境中的用户。",
+    "severity": null
+  },
+  {
+    "id": "CWE-287",
+    "name": "认证不当",
+    "description": "当角色声称拥有某身份时，产品未充分证明或验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-288",
+    "name": "通过替代路径或通道绕过认证",
+    "description": "产品需要认证，但存在绕过认证的替代路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-289",
+    "name": "通过替代名称绕过认证",
+    "description": "产品基于访问的资源名称或角色名称进行认证，但允许替换。",
+    "severity": null
+  },
+  {
+    "id": "CWE-29",
+    "name": "路径遍历：'\\..\\filename'",
+    "description": "产品使用外部输入构造路径名，包含'\\..\\'导致目录遍历。",
+    "severity": null
+  },
+  {
+    "id": "CWE-290",
+    "name": "通过欺骗绕过认证",
+    "description": "认证方案实现不当，易被欺骗绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-291",
+    "name": "依赖IP地址进行认证",
+    "description": "产品使用IP地址进行认证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-293",
+    "name": "使用Referer字段进行认证",
+    "description": "HTTP请求中的Referer字段可被轻易修改，不足以作为认证手段。",
+    "severity": null
+  },
+  {
+    "id": "CWE-294",
+    "name": "通过捕获重放绕过认证",
+    "description": "认证方案设计缺陷，允许恶意用户捕获并重放有效凭证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-295",
+    "name": "证书验证不当",
+    "description": "产品未验证或错误验证证书。",
+    "severity": null
+  },
+  {
+    "id": "CWE-296",
+    "name": "证书信任链跟踪不当",
+    "description": "产品未正确遵循证书信任链至根证书。",
+    "severity": null
+  },
+  {
+    "id": "CWE-297",
+    "name": "证书与主机不匹配验证不当",
+    "description": "产品与提供证书的主机通信，但未验证证书是否匹配主机名。",
+    "severity": null
+  },
+  {
+    "id": "CWE-298",
+    "name": "证书过期验证不当",
+    "description": "证书过期未验证或错误验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-299",
+    "name": "证书吊销检查不当",
+    "description": "产品未检查或错误检查证书吊销状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-30",
+    "name": "路径遍历：'\\dir\\..\\filename'",
+    "description": "产品使用外部输入构造路径名，包含'\\dir\\..\\filename'模式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-300",
+    "name": "通道可被非端点访问",
+    "description": "产品未充分验证通信两端角色身份。",
+    "severity": null
+  },
+  {
+    "id": "CWE-301",
+    "name": "认证协议中的反射攻击",
+    "description": "简单认证协议易受反射攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-302",
+    "name": "通过假定不可变数据绕过认证",
+    "description": "认证方案使用假定不可变的数据元素，但实际可被篡改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-303",
+    "name": "认证算法实现错误",
+    "description": "需求规定使用已建立的认证算法，但实现有误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-304",
+    "name": "认证关键步骤缺失",
+    "description": "产品实现了认证技术，但跳过关键步骤。",
+    "severity": null
+  },
+  {
+    "id": "CWE-305",
+    "name": "通过根本弱点绕过认证",
+    "description": "认证算法本身正确，但实现中存在可被绕过的弱点。",
+    "severity": null
+  },
+  {
+    "id": "CWE-306",
+    "name": "关键功能缺少认证",
+    "description": "产品对需要验证用户身份的功能未执行任何认证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-307",
+    "name": "认证尝试次数限制不当",
+    "description": "产品未采取措施防止过多失败认证尝试。",
+    "severity": null
+  },
+  {
+    "id": "CWE-308",
+    "name": "使用单因素认证",
+    "description": "产品在安全敏感环境中使用仅基于单一因素（如密码）的认证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-309",
+    "name": "使用密码系统作为主要认证手段",
+    "description": "使用密码系统作为主要认证手段可能面临多种缺陷。",
+    "severity": null
+  },
+  {
+    "id": "CWE-31",
+    "name": "路径遍历：'dir\\..\\..\\filename'",
+    "description": "产品使用外部输入构造路径名，包含多层反斜杠上级目录。",
+    "severity": null
+  },
+  {
+    "id": "CWE-311",
+    "name": "敏感数据加密缺失",
+    "description": "产品在存储或传输前未加密敏感或关键信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-312",
+    "name": "敏感信息明文存储",
+    "description": "产品在可能被访问的资源中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-313",
+    "name": "文件或磁盘上的明文存储",
+    "description": "产品在文件或磁盘中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-314",
+    "name": "注册表中的明文存储",
+    "description": "产品在注册表中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-315",
+    "name": "Cookie中的明文存储",
+    "description": "产品在Cookie中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-316",
+    "name": "内存中的明文存储",
+    "description": "产品在内存中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-317",
+    "name": "GUI中的明文存储",
+    "description": "产品在GUI中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-318",
+    "name": "可执行文件中的明文存储",
+    "description": "产品在可执行文件中以明文存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-319",
+    "name": "敏感信息明文传输",
+    "description": "产品在通信信道中以明文传输敏感或安全关键数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-32",
+    "name": "路径遍历：'...'（三点）",
+    "description": "产品使用外部输入构造路径名，包含三点（'...'）导致目录遍历。",
+    "severity": null
+  },
+  {
+    "id": "CWE-321",
+    "name": "使用硬编码加密密钥",
+    "description": "产品使用硬编码且不可更改的加密密钥。",
+    "severity": null
+  },
+  {
+    "id": "CWE-322",
+    "name": "密钥交换无实体认证",
+    "description": "产品与角色进行密钥交换时未验证其身份。",
+    "severity": null
+  },
+  {
+    "id": "CWE-323",
+    "name": "重复使用随机数或密钥对",
+    "description": "随机数应一次性使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-324",
+    "name": "使用过期密钥",
+    "description": "产品使用过期加密密钥或密码，削弱安全性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-325",
+    "name": "缺少密码步骤",
+    "description": "产品未实现密码算法中的必需步骤。",
+    "severity": null
+  },
+  {
+    "id": "CWE-326",
+    "name": "加密强度不足",
+    "description": "产品使用理论上安全但实际强度不足的加密方案。",
+    "severity": null
+  },
+  {
+    "id": "CWE-327",
+    "name": "使用已破解或有风险的加密算法",
+    "description": "产品使用已破解或有风险的加密算法或协议。",
+    "severity": null
+  },
+  {
+    "id": "CWE-328",
+    "name": "使用弱哈希",
+    "description": "产品使用产生不符合安全期望摘要的哈希算法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-329",
+    "name": "CBC模式下生成可预测IV",
+    "description": "产品使用CBC模式时生成可预测的初始化向量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-33",
+    "name": "路径遍历：'....'（多个点）",
+    "description": "产品使用外部输入构造路径名，包含多个点。",
+    "severity": null
+  },
+  {
+    "id": "CWE-330",
+    "name": "使用不够随机的值",
+    "description": "产品在安全上下文中使用不够随机的数值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-331",
+    "name": "熵不足",
+    "description": "产品使用的算法或方案产生的熵不足，留下可预测模式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-332",
+    "name": "PRNG中熵不足",
+    "description": "伪随机数生成器使用的熵不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-333",
+    "name": "TRNG中熵不足处理不当",
+    "description": "真随机数生成器熵源有限，但处理不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-334",
+    "name": "随机值空间过小",
+    "description": "随机值数量少于所需，更易受攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-335",
+    "name": "PRNG种子使用错误",
+    "description": "产品使用PRNG但种子管理不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-336",
+    "name": "PRNG中使用相同种子",
+    "description": "PRNG每次初始化使用相同种子。",
+    "severity": null
+  },
+  {
+    "id": "CWE-337",
+    "name": "PRNG中使用可预测种子",
+    "description": "PRNG从可预测种子初始化（如进程ID或时间）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-338",
+    "name": "使用密码学弱的PRNG",
+    "description": "产品在安全上下文中使用算法弱的PRNG。",
+    "severity": null
+  },
+  {
+    "id": "CWE-339",
+    "name": "PRNG种子空间过小",
+    "description": "PRNG种子空间相对较小，易受攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-34",
+    "name": "路径遍历：'....//'",
+    "description": "产品使用外部输入构造路径名，包含多个点和斜杠。",
+    "severity": null
+  },
+  {
+    "id": "CWE-340",
+    "name": "生成可预测的数字或标识符",
+    "description": "产品使用比所需更可预测的方案生成数字或标识符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-341",
+    "name": "从可观察状态可预测",
+    "description": "基于攻击者可观察到的状态可预测数字或对象。",
+    "severity": null
+  },
+  {
+    "id": "CWE-342",
+    "name": "从先前值可精确预测",
+    "description": "可通过观察先前值精确预测随机值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-343",
+    "name": "从先前值可预测值范围",
+    "description": "随机数生成器生成序列，观察后可推断后续范围。",
+    "severity": null
+  },
+  {
+    "id": "CWE-344",
+    "name": "动态变化上下文中使用不变值",
+    "description": "产品使用常数值或引用，但该值在不同上下文中应变化。",
+    "severity": null
+  },
+  {
+    "id": "CWE-345",
+    "name": "数据真实性验证不足",
+    "description": "产品未充分验证数据来源或真实性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-346",
+    "name": "来源验证错误",
+    "description": "产品未正确验证数据或通信来源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-347",
+    "name": "密码签名验证不当",
+    "description": "产品未验证或错误验证密码签名。",
+    "severity": null
+  },
+  {
+    "id": "CWE-348",
+    "name": "使用较不可信的来源",
+    "description": "产品有两个相同数据来源，但使用了较不可信的那个。",
+    "severity": null
+  },
+  {
+    "id": "CWE-349",
+    "name": "接受与可信数据混杂的无关不可信数据",
+    "description": "产品在处理可信数据时接受与之混杂的不可信数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-35",
+    "name": "路径遍历：'.../...//'",
+    "description": "产品使用外部输入构造路径名，包含复杂点斜杠模式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-350",
+    "name": "为安全关键操作依赖反向DNS解析",
+    "description": "产品对IP地址执行反向DNS解析获取主机名并用于安全决策。",
+    "severity": null
+  },
+  {
+    "id": "CWE-351",
+    "name": "类型区分不足",
+    "description": "产品未正确区分不同类型元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-352",
+    "name": "跨站请求伪造（CSRF）",
+    "description": "Web应用无法充分验证请求是否由用户有意发起。",
+    "severity": null
+  },
+  {
+    "id": "CWE-353",
+    "name": "缺少对完整性检查的支持",
+    "description": "产品使用的传输协议未包含验证完整性机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-354",
+    "name": "完整性校验值验证不当",
+    "description": "产品未验证或错误验证校验和等完整性值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-356",
+    "name": "产品UI未警告用户不安全操作",
+    "description": "产品用户界面在代表用户执行不安全操作前未警告。",
+    "severity": null
+  },
+  {
+    "id": "CWE-357",
+    "name": "危险操作UI警告不足",
+    "description": "用户界面提供了危险操作警告，但不够显著。",
+    "severity": null
+  },
+  {
+    "id": "CWE-358",
+    "name": "安全检查未正确实现标准",
+    "description": "产品未实现或错误实现标准要求的安全检查。",
+    "severity": null
+  },
+  {
+    "id": "CWE-359",
+    "name": "私人个人信息泄露给未授权角色",
+    "description": "产品未正确防止他人访问私人信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-36",
+    "name": "绝对路径遍历",
+    "description": "产品使用外部输入构造绝对路径，应限制在目录内但未限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-360",
+    "name": "信任系统事件数据",
+    "description": "基于事件位置的安全措施不安全且可被欺骗。",
+    "severity": null
+  },
+  {
+    "id": "CWE-362",
+    "name": "共享资源并发使用同步不当（竞争条件）",
+    "description": "产品包含需要临时独占访问共享资源的并发代码序列。",
+    "severity": null
+  },
+  {
+    "id": "CWE-363",
+    "name": "允许链接跟随的竞争条件",
+    "description": "产品在访问文件或目录前检查状态，产生TOCTOU竞争。",
+    "severity": null
+  },
+  {
+    "id": "CWE-364",
+    "name": "信号处理程序竞争条件",
+    "description": "产品使用信号处理程序引入竞争条件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-366",
+    "name": "线程内竞争条件",
+    "description": "两个线程同时使用资源可能导致错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-367",
+    "name": "检查时间与使用时间竞争条件（TOCTOU）",
+    "description": "产品使用资源前检查状态，但状态在检查和使用时可能改变。",
+    "severity": null
+  },
+  {
+    "id": "CWE-368",
+    "name": "上下文切换竞争条件",
+    "description": "产品执行非原子操作序列切换特权或安全上下文。",
+    "severity": null
+  },
+  {
+    "id": "CWE-369",
+    "name": "除以零",
+    "description": "产品将值除以零。",
+    "severity": null
+  },
+  {
+    "id": "CWE-37",
+    "name": "路径遍历：'/absolute/pathname/here'",
+    "description": "产品接受斜杠绝对路径，未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-370",
+    "name": "初始检查后证书吊销检查缺失",
+    "description": "产品在初始检查后未再次检查证书吊销状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-372",
+    "name": "内部状态区分不完整",
+    "description": "产品未正确确定其状态，导致假设错误状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-374",
+    "name": "将可变对象传递给不可信方法",
+    "description": "产品将未克隆的可变数据作为参数传递给方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-375",
+    "name": "将可变对象返回给不可信调用者",
+    "description": "将未克隆的可变数据作为返回值可能导致被修改或删除。",
+    "severity": null
+  },
+  {
+    "id": "CWE-377",
+    "name": "不安全的临时文件",
+    "description": "创建和使用不安全临时文件易受攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-378",
+    "name": "创建临时文件权限不安全",
+    "description": "打开临时文件时未采取适当措施。",
+    "severity": null
+  },
+  {
+    "id": "CWE-379",
+    "name": "在权限不安全的目录中创建临时文件",
+    "description": "产品在权限不安全的目录中创建临时文件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-38",
+    "name": "路径遍历：'\\absolute\\pathname\\here'",
+    "description": "产品接受反斜杠绝对路径，未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-382",
+    "name": "J2EE不良实践：使用System.exit()",
+    "description": "J2EE应用使用System.exit()会关闭容器。",
+    "severity": null
+  },
+  {
+    "id": "CWE-383",
+    "name": "J2EE不良实践：直接使用线程",
+    "description": "Web应用中的线程管理在有些情况下被禁止，且易出错。",
+    "severity": null
+  },
+  {
+    "id": "CWE-384",
+    "name": "会话固定",
+    "description": "认证用户或建立新用户会话时未使旧会话失效。",
+    "severity": null
+  },
+  {
+    "id": "CWE-385",
+    "name": "隐蔽时序信道",
+    "description": "隐蔽时序信道通过调制系统行为随时间变化来传递信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-386",
+    "name": "符号名称未映射到正确对象",
+    "description": "使用常量符号引用，但引用可能解析到不同对象。",
+    "severity": null
+  },
+  {
+    "id": "CWE-39",
+    "name": "路径遍历：'C:dirname'",
+    "description": "产品接受包含驱动器号或Windows卷标（'C:dirname'）的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-390",
+    "name": "检测到错误条件但未采取行动",
+    "description": "产品检测到特定错误但不采取任何处理。",
+    "severity": null
+  },
+  {
+    "id": "CWE-391",
+    "name": "未检查错误条件",
+    "description": "忽略错误条件（计划弃用）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-392",
+    "name": "缺少错误状态报告",
+    "description": "产品遇到错误但未提供状态码或返回值指示。",
+    "severity": null
+  },
+  {
+    "id": "CWE-393",
+    "name": "返回错误状态码",
+    "description": "函数返回错误状态码，但未指示正确错误类型。",
+    "severity": null
+  },
+  {
+    "id": "CWE-394",
+    "name": "意外状态码或返回值",
+    "description": "产品未正确处理函数返回的合法但意外值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-395",
+    "name": "使用NullPointerException捕获来检测空指针解引用",
+    "description": "不应使用捕获NullPointerException替代编程检查。",
+    "severity": null
+  },
+  {
+    "id": "CWE-396",
+    "name": "捕获通用异常",
+    "description": "捕获过于宽泛的异常导致复杂错误处理。",
+    "severity": null
+  },
+  {
+    "id": "CWE-397",
+    "name": "抛出通用异常",
+    "description": "抛出过于宽泛的异常会隐藏重要细节。",
+    "severity": null
+  },
+  {
+    "id": "CWE-40",
+    "name": "路径遍历：'\\\\UNC\\share\\name\\'（Windows UNC共享）",
+    "description": "产品接受Windows UNC共享路径，未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-400",
+    "name": "资源消耗不受控制",
+    "description": "产品未正确控制资源的分配和维护。",
+    "severity": null
+  },
+  {
+    "id": "CWE-401",
+    "name": "有效生命周期后未释放内存",
+    "description": "产品未充分跟踪和释放已使用内存。",
+    "severity": null
+  },
+  {
+    "id": "CWE-402",
+    "name": "私有资源传输到新范围（资源泄漏）",
+    "description": "产品将资源提供给不可信方，但资源仅应内部使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-403",
+    "name": "文件描述符暴露给非预期控制范围",
+    "description": "进程在调用子进程前未关闭敏感文件描述符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-404",
+    "name": "资源关闭或释放不当",
+    "description": "产品未正确释放资源，或释放后仍可被使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-405",
+    "name": "不对称资源消耗（放大）",
+    "description": "产品未控制对手利用其消耗更多资源的情况。",
+    "severity": null
+  },
+  {
+    "id": "CWE-406",
+    "name": "网络消息量控制不足（网络放大）",
+    "description": "产品未充分监控或控制传输网络流量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-407",
+    "name": "算法复杂度低效",
+    "description": "产品算法在最坏情况下计算复杂度高。",
+    "severity": null
+  },
+  {
+    "id": "CWE-408",
+    "name": "行为顺序错误：过早放大",
+    "description": "产品允许实体在认证前执行昂贵操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-409",
+    "name": "高度压缩数据处理不当",
+    "description": "产品未正确处理压缩率极高的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-41",
+    "name": "路径等价解析不当",
+    "description": "产品易受路径等价导致的文件系统内容泄露。",
+    "severity": null
+  },
+  {
+    "id": "CWE-410",
+    "name": "资源池不足",
+    "description": "产品资源池不足以应对峰值需求，易受DoS攻击。",
+    "severity": null
+  },
+  {
+    "id": "CWE-412",
+    "name": "外部可访问的锁不受限制",
+    "description": "产品检查锁是否存在，但锁可被外部控制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-413",
+    "name": "资源锁定不当",
+    "description": "产品在需要独占访问时未正确锁定资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-414",
+    "name": "缺少锁检查",
+    "description": "产品在执行敏感操作前未检查锁是否存在。",
+    "severity": null
+  },
+  {
+    "id": "CWE-415",
+    "name": "双重释放",
+    "description": "产品对同一内存地址调用free()两次。",
+    "severity": null
+  },
+  {
+    "id": "CWE-416",
+    "name": "释放后使用",
+    "description": "产品在内存释放后重新引用或使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-419",
+    "name": "未受保护的主通道",
+    "description": "产品使用主通道进行管理，但未保护。",
+    "severity": null
+  },
+  {
+    "id": "CWE-42",
+    "name": "路径等价：'filename.'（尾部点）",
+    "description": "产品接受尾部点路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-420",
+    "name": "未受保护的备用通道",
+    "description": "产品保护主通道，但备用通道未使用相同保护级别。",
+    "severity": null
+  },
+  {
+    "id": "CWE-421",
+    "name": "访问备用通道时的竞争条件",
+    "description": "产品打开与授权用户的备用通道，但通道在认证期间被竞争。",
+    "severity": null
+  },
+  {
+    "id": "CWE-422",
+    "name": "未受保护的Windows消息通道（Shatter）",
+    "description": "产品未正确验证Windows消息系统中消息来源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-424",
+    "name": "备用路径保护不当",
+    "description": "产品未充分保护用户可能访问受限资源的所有路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-425",
+    "name": "直接请求（强制浏览）",
+    "description": "Web应用未对所有受限URL实施适当授权。",
+    "severity": null
+  },
+  {
+    "id": "CWE-426",
+    "name": "不可信搜索路径",
+    "description": "产品使用外部提供的搜索路径查找关键资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-427",
+    "name": "搜索路径元素不受控制",
+    "description": "产品使用固定或受控搜索路径，但其中部分位置不受控制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-428",
+    "name": "未引用的搜索路径或元素",
+    "description": "产品搜索路径包含未引用元素，且元素包含空白。",
+    "severity": null
+  },
+  {
+    "id": "CWE-43",
+    "name": "路径等价：'filename....'（多个尾部点）",
+    "description": "产品接受多个尾部点路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-430",
+    "name": "部署了错误的处理程序",
+    "description": "错误处理程序被分配处理对象。",
+    "severity": null
+  },
+  {
+    "id": "CWE-431",
+    "name": "缺少处理程序",
+    "description": "处理程序不可用或未实现。",
+    "severity": null
+  },
+  {
+    "id": "CWE-432",
+    "name": "敏感操作期间未禁用危险信号处理程序",
+    "description": "产品使用与其他信号处理程序共享状态的信号处理程序，但未正确禁用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-433",
+    "name": "未解析的原始Web内容传输",
+    "description": "产品将原始内容或支持代码存储在Web文档根目录下，扩展名可被解析。",
+    "severity": null
+  },
+  {
+    "id": "CWE-434",
+    "name": "危险类型文件上传不受限制",
+    "description": "产品允许上传或传输自动处理的危险文件类型。",
+    "severity": null
+  },
+  {
+    "id": "CWE-435",
+    "name": "多个正确行为实体间交互错误",
+    "description": "实体独立运行时行为正确，但交互时出错。",
+    "severity": null
+  },
+  {
+    "id": "CWE-436",
+    "name": "解释冲突",
+    "description": "产品A处理输入方式与产品B不同，导致A执行错误操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-437",
+    "name": "端点特性模型不完整",
+    "description": "产品作为中间人，但未完整建模端点功能。",
+    "severity": null
+  },
+  {
+    "id": "CWE-439",
+    "name": "新版本或环境中的行为变化",
+    "description": "产品行为随新版本或新环境变化，但未通知用户。",
+    "severity": null
+  },
+  {
+    "id": "CWE-44",
+    "name": "路径等价：'file.name'（内部点）",
+    "description": "产品接受内部点路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-440",
+    "name": "预期行为违反",
+    "description": "功能、API或函数未按规范执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-441",
+    "name": "意外代理或中介（“糊涂代理”）",
+    "description": "产品从上游组件接收请求，但未验证请求来源，导致代理执行意外操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-443",
+    "name": "已弃用：HTTP响应拆分",
+    "description": "见CWE-113。",
+    "severity": null
+  },
+  {
+    "id": "CWE-444",
+    "name": "HTTP请求解释不一致（HTTP请求走私）",
+    "description": "产品作为HTTP代理，在服务器和客户端之间解释不一致导致走私。",
+    "severity": null
+  },
+  {
+    "id": "CWE-446",
+    "name": "安全功能UI差异",
+    "description": "用户界面未正确启用或配置安全功能，但显示已配置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-447",
+    "name": "UI中未实现或不支持的功能",
+    "description": "安全功能在UI中看似支持，但实际未实现。",
+    "severity": null
+  },
+  {
+    "id": "CWE-448",
+    "name": "UI中的过时功能",
+    "description": "UI功能已过时，但产品未警告用户。",
+    "severity": null
+  },
+  {
+    "id": "CWE-449",
+    "name": "UI执行错误操作",
+    "description": "UI执行了与用户请求不同的操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-45",
+    "name": "路径等价：'file...name'（多个内部点）",
+    "description": "产品接受多个内部点路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-450",
+    "name": "UI输入的多种解释",
+    "description": "UI对用户输入有多种解释，但未提示用户选择。",
+    "severity": null
+  },
+  {
+    "id": "CWE-451",
+    "name": "关键信息UI误表示",
+    "description": "UI未正确向用户呈现关键信息，导致用户误解。",
+    "severity": null
+  },
+  {
+    "id": "CWE-453",
+    "name": "不安全的默认变量初始化",
+    "description": "产品默认使用不安全或较不安全的值初始化内部变量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-454",
+    "name": "可信变量或数据存储的外部初始化",
+    "description": "产品使用可被修改的输入初始化关键变量或数据存储。",
+    "severity": null
+  },
+  {
+    "id": "CWE-455",
+    "name": "初始化失败时未退出",
+    "description": "产品在安全相关错误发生时未退出或修改操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-456",
+    "name": "变量未初始化",
+    "description": "产品未初始化关键变量，导致使用未定义值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-457",
+    "name": "使用未初始化变量",
+    "description": "代码使用未初始化变量，导致意外结果。",
+    "severity": null
+  },
+  {
+    "id": "CWE-459",
+    "name": "不完整的清理",
+    "description": "产品未正确清理和删除临时或支持资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-46",
+    "name": "路径等价：'filename '（尾部空格）",
+    "description": "产品接受尾部空格路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-460",
+    "name": "抛出异常时清理不当",
+    "description": "产品在抛出异常时未正确清理状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-462",
+    "name": "关联列表中的重复键",
+    "description": "重复键导致非唯一键被误认为错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-463",
+    "name": "数据结构哨兵删除",
+    "description": "意外删除数据结构哨兵导致逻辑错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-464",
+    "name": "数据结构哨兵添加",
+    "description": "意外添加数据结构哨兵导致逻辑错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-466",
+    "name": "返回预期范围外的指针",
+    "description": "函数可能返回超出缓冲区范围的指针。",
+    "severity": null
+  },
+  {
+    "id": "CWE-467",
+    "name": "对指针类型使用sizeof()",
+    "description": "对指针类型调用sizeof()可能导致错误计算。",
+    "severity": null
+  },
+  {
+    "id": "CWE-468",
+    "name": "指针缩放错误",
+    "description": "在C/C++中常因指针运算语义导致引用错误内存。",
+    "severity": null
+  },
+  {
+    "id": "CWE-469",
+    "name": "使用指针减法确定大小",
+    "description": "使用指针减法确定大小，但计算可能错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-47",
+    "name": "路径等价：' filename'（前导空格）",
+    "description": "产品接受前导空格路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-470",
+    "name": "使用外部输入选择类或代码（不安全反射）",
+    "description": "产品使用外部输入通过反射选择类或代码，但未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-471",
+    "name": "修改假定不可变数据（MAID）",
+    "description": "产品未正确保护假定不可变元素不被修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-472",
+    "name": "外部控制假定不可变的Web参数",
+    "description": "Web应用未充分验证假定不可变但实际可被篡改的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-473",
+    "name": "PHP外部变量修改",
+    "description": "PHP应用未正确保护外部变量不被修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-474",
+    "name": "使用实现不一致的函数",
+    "description": "代码使用的函数在不同操作系统和版本上实现不一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-475",
+    "name": "API输入的未定义行为",
+    "description": "函数行为未定义，除非控制参数设为特定值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-476",
+    "name": "空指针解引用",
+    "description": "产品解引用预期非空但实际为空的指针。",
+    "severity": null
+  },
+  {
+    "id": "CWE-478",
+    "name": "多条件表达式中缺少默认分支",
+    "description": "代码在switch等结构中缺少默认分支。",
+    "severity": null
+  },
+  {
+    "id": "CWE-479",
+    "name": "信号处理程序使用非可重入函数",
+    "description": "产品定义的信号处理程序调用了非可重入函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-48",
+    "name": "路径等价：'file name'（内部空格）",
+    "description": "产品接受内部空格路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-480",
+    "name": "使用错误运算符",
+    "description": "产品意外使用错误运算符，改变安全逻辑。",
+    "severity": null
+  },
+  {
+    "id": "CWE-481",
+    "name": "赋值而非比较",
+    "description": "代码使用赋值运算符，但本意是比较。",
+    "severity": null
+  },
+  {
+    "id": "CWE-482",
+    "name": "比较而非赋值",
+    "description": "代码使用比较运算符，但本意是赋值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-483",
+    "name": "块定界错误",
+    "description": "代码未明确界定包含多条语句的块，导致逻辑错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-484",
+    "name": "switch中遗漏break语句",
+    "description": "产品在switch中遗漏break，导致执行意外分支。",
+    "severity": null
+  },
+  {
+    "id": "CWE-486",
+    "name": "按名称比较类",
+    "description": "产品按名称比较类，可能导致使用错误类。",
+    "severity": null
+  },
+  {
+    "id": "CWE-487",
+    "name": "依赖包级作用域",
+    "description": "Java包不是封闭的，依赖其进行安全控制不可靠。",
+    "severity": null
+  },
+  {
+    "id": "CWE-488",
+    "name": "数据元素暴露给错误会话",
+    "description": "产品未充分隔离不同会话状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-489",
+    "name": "活动调试代码",
+    "description": "产品发布时仍启用调试代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-49",
+    "name": "路径等价：'filename/'（尾部斜杠）",
+    "description": "产品接受尾部斜杠路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-491",
+    "name": "公开cloneable()方法未声明final（对象劫持）",
+    "description": "类有可克隆方法但未声明final，允许创建对象。",
+    "severity": null
+  },
+  {
+    "id": "CWE-492",
+    "name": "包含敏感数据的内部类",
+    "description": "内部类被转换为包级可访问类，可能暴露代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-493",
+    "name": "关键公共变量无final修饰",
+    "description": "产品有非final关键公共变量，可被修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-494",
+    "name": "下载代码未验证完整性",
+    "description": "产品从远程位置下载代码并执行，但未验证完整性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-495",
+    "name": "公共方法返回私有数据结构",
+    "description": "声明为public的方法返回私有数据结构引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-496",
+    "name": "公共数据赋值给私有数组字段",
+    "description": "将公共数据赋值给私有数组等同于公开访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-497",
+    "name": "敏感系统信息暴露给未授权控制范围",
+    "description": "产品未阻止未授权角色访问系统级敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-498",
+    "name": "包含敏感信息的可克隆类",
+    "description": "类包含敏感数据但可克隆，数据可被访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-499",
+    "name": "包含敏感数据的可序列化类",
+    "description": "类包含敏感数据但未明确禁止序列化。",
+    "severity": null
+  },
+  {
+    "id": "CWE-5",
+    "name": "J2EE配置错误：数据传输未加密",
+    "description": "网络传输数据可能被窃听。",
+    "severity": null
+  },
+  {
+    "id": "CWE-50",
+    "name": "路径等价：'//multiple/leading/slash'",
+    "description": "产品接受多个前导斜杠路径，未正确验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-500",
+    "name": "公共静态字段未声明final",
+    "description": "对象包含非final公共静态字段，可能被修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-501",
+    "name": "信任边界违反",
+    "description": "产品在同一数据结构或消息中混合可信和不可信数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-502",
+    "name": "不可信数据反序列化",
+    "description": "产品反序列化不可信数据，未确保结果安全。",
+    "severity": null
+  },
+  {
+    "id": "CWE-506",
+    "name": "嵌入恶意代码",
+    "description": "产品包含明显恶意的代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-507",
+    "name": "特洛伊木马",
+    "description": "产品看似包含良性功能，实际隐藏恶意代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-508",
+    "name": "非复制恶意代码",
+    "description": "非复制恶意代码仅驻留在被攻击系统上。",
+    "severity": null
+  },
+  {
+    "id": "CWE-509",
+    "name": "复制恶意代码（病毒或蠕虫）",
+    "description": "复制恶意代码会尝试攻击其他系统。",
+    "severity": null
+  },
+  {
+    "id": "CWE-51",
+    "name": "路径等价：'/multiple//internal/slash'",
+    "description": "产品接受多个内部斜杠路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-510",
+    "name": "陷阱门",
+    "description": "隐藏代码响应特殊输入，允许未授权访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-511",
+    "name": "逻辑/时间炸弹",
+    "description": "产品包含旨在破坏正常运行或造成伤害的代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-512",
+    "name": "间谍软件",
+    "description": "产品收集用户个人可识别信息或活动信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-514",
+    "name": "隐蔽信道",
+    "description": "以非预期方式传递信息的路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-515",
+    "name": "隐蔽存储信道",
+    "description": "通过设置位传递信息的信道。",
+    "severity": null
+  },
+  {
+    "id": "CWE-516",
+    "name": "已弃用：隐蔽时序信道",
+    "description": "见CWE-385。",
+    "severity": null
+  },
+  {
+    "id": "CWE-52",
+    "name": "路径等价：'/multiple/trailing/slash//'",
+    "description": "产品接受多个尾部斜杠路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-520",
+    "name": ".NET配置错误：使用模拟",
+    "description": "允许.NET应用以潜在提升权限运行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-521",
+    "name": "弱密码要求",
+    "description": "产品未要求用户使用强密码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-522",
+    "name": "凭据保护不足",
+    "description": "产品传输或存储认证凭据时使用不安全方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-523",
+    "name": "凭据传输未受保护",
+    "description": "登录页面未采取足够措施保护用户名和密码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-524",
+    "name": "使用包含敏感信息的缓存",
+    "description": "产品使用可被外部读取的缓存。",
+    "severity": null
+  },
+  {
+    "id": "CWE-525",
+    "name": "使用包含敏感信息的Web浏览器缓存",
+    "description": "Web应用未使用适当缓存策略。",
+    "severity": null
+  },
+  {
+    "id": "CWE-526",
+    "name": "环境变量中明文存储敏感信息",
+    "description": "产品使用环境变量存储未加密敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-527",
+    "name": "版本控制仓库暴露给未授权控制范围",
+    "description": "产品将CVS、git等仓库存储在可访问位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-528",
+    "name": "核心转储文件暴露给未授权控制范围",
+    "description": "产品生成的核心转储文件存储在可访问位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-529",
+    "name": "访问控制列表文件暴露给未授权控制范围",
+    "description": "产品将ACL文件存储在可访问目录。",
+    "severity": null
+  },
+  {
+    "id": "CWE-53",
+    "name": "路径等价：'\\multiple\\\\internal\\backslash'",
+    "description": "产品接受多个内部反斜杠路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-530",
+    "name": "备份文件暴露给未授权控制范围",
+    "description": "备份文件存储在可被未授权角色访问的目录。",
+    "severity": null
+  },
+  {
+    "id": "CWE-531",
+    "name": "测试代码中包含敏感信息",
+    "description": "可访问的测试应用可能带来安全风险。",
+    "severity": null
+  },
+  {
+    "id": "CWE-532",
+    "name": "日志文件中插入敏感信息",
+    "description": "产品将敏感信息写入日志文件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-535",
+    "name": "通过Shell错误消息暴露信息",
+    "description": "命令Shell错误消息表明Web应用存在未处理异常。",
+    "severity": null
+  },
+  {
+    "id": "CWE-536",
+    "name": "Servlet运行时错误消息包含敏感信息",
+    "description": "Servlet错误消息表明存在未处理异常。",
+    "severity": null
+  },
+  {
+    "id": "CWE-537",
+    "name": "Java运行时错误消息包含敏感信息",
+    "description": "攻击者可利用未处理异常条件获取信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-538",
+    "name": "将敏感信息插入外部可访问文件或目录",
+    "description": "产品将敏感信息放入外部可访问文件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-539",
+    "name": "使用包含敏感信息的持久Cookie",
+    "description": "Web应用使用持久Cookie，其中包含敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-54",
+    "name": "路径等价：'filedir\\'（尾部反斜杠）",
+    "description": "产品接受尾部反斜杠路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-540",
+    "name": "源代码中包含敏感信息",
+    "description": "Web服务器或仓库中的源代码常包含敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-541",
+    "name": "包含文件中包含敏感信息",
+    "description": "如果包含文件可访问，可能包含敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-543",
+    "name": "多线程上下文中使用单例模式未同步",
+    "description": "产品在多线程环境中使用单例模式创建资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-544",
+    "name": "缺少标准化错误处理机制",
+    "description": "产品未使用标准化错误处理方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-546",
+    "name": "可疑注释",
+    "description": "代码注释暗示存在错误、不完整或弱点。",
+    "severity": null
+  },
+  {
+    "id": "CWE-547",
+    "name": "使用硬编码安全相关常量",
+    "description": "产品使用硬编码常量而非符号名。",
+    "severity": null
+  },
+  {
+    "id": "CWE-548",
+    "name": "通过目录列表暴露信息",
+    "description": "产品暴露目录列表，显示所有资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-549",
+    "name": "密码字段掩码缺失",
+    "description": "产品在输入时未掩码密码，增加被观察风险。",
+    "severity": null
+  },
+  {
+    "id": "CWE-55",
+    "name": "路径等价：'/./'（单点目录）",
+    "description": "产品接受单点目录路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-550",
+    "name": "服务器生成的错误消息包含敏感信息",
+    "description": "网络故障等条件导致服务器显示错误消息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-551",
+    "name": "行为顺序错误：授权先于解析和规范化",
+    "description": "Web服务器未先解析URL再检查授权，可能导致绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-552",
+    "name": "文件或目录可被外部访问",
+    "description": "产品使文件或目录可被未授权角色访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-553",
+    "name": "外部可访问目录中的命令Shell",
+    "description": "/cgi-bin/等目录中存在Shell文件危险。",
+    "severity": null
+  },
+  {
+    "id": "CWE-554",
+    "name": "ASP.NET配置错误：未使用输入验证框架",
+    "description": "ASP.NET应用未使用输入验证框架。",
+    "severity": null
+  },
+  {
+    "id": "CWE-555",
+    "name": "J2EE配置错误：配置文件中明文密码",
+    "description": "J2EE应用在配置文件中存储明文密码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-556",
+    "name": "ASP.NET配置错误：使用身份模拟",
+    "description": "配置ASP.NET应用使用模拟凭据可能授予多余权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-558",
+    "name": "多线程应用中使用getlogin()",
+    "description": "产品在多线程上下文中使用getlogin()，可能返回错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-56",
+    "name": "路径等价：'filedir*'（通配符）",
+    "description": "产品接受通配符路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-560",
+    "name": "以chmod风格参数调用umask()",
+    "description": "产品调用umask()时参数格式错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-561",
+    "name": "死代码",
+    "description": "产品包含永远不会执行的代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-562",
+    "name": "返回栈变量地址",
+    "description": "函数返回栈变量地址，导致意外行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-563",
+    "name": "赋值给未使用的变量",
+    "description": "变量被赋值但从未使用（死存储）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-564",
+    "name": "SQL注入：Hibernate",
+    "description": "使用Hibernate执行动态SQL，用户输入可控。",
+    "severity": null
+  },
+  {
+    "id": "CWE-565",
+    "name": "依赖Cookie而未验证和完整性检查",
+    "description": "产品依赖Cookie值执行安全关键操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-566",
+    "name": "通过用户控制的SQL主键绕过授权",
+    "description": "产品数据库表包含不应被访问的记录，但授权基于用户提供的主键。",
+    "severity": null
+  },
+  {
+    "id": "CWE-567",
+    "name": "多线程上下文中共享数据未同步",
+    "description": "产品未正确同步共享数据（如静态变量）。",
+    "severity": null
+  },
+  {
+    "id": "CWE-568",
+    "name": "finalize()方法未调用super.finalize()",
+    "description": "产品finalize()方法未调用父类方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-57",
+    "name": "路径等价：'fakedir/../realdir/filename'",
+    "description": "产品限制访问'realdir/filename'，但可通过伪造路径绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-570",
+    "name": "表达式始终为假",
+    "description": "产品包含始终为假的表达式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-571",
+    "name": "表达式始终为真",
+    "description": "产品包含始终为真的表达式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-572",
+    "name": "调用线程run()而非start()",
+    "description": "调用线程run()导致代码在当前线程执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-573",
+    "name": "调用者未遵循规范",
+    "description": "产品未遵循实现所需规范。",
+    "severity": null
+  },
+  {
+    "id": "CWE-574",
+    "name": "EJB不良实践：使用同步原语",
+    "description": "产品违反EJB规范使用线程同步。",
+    "severity": null
+  },
+  {
+    "id": "CWE-575",
+    "name": "EJB不良实践：使用AWT Swing",
+    "description": "违反EJB规范使用AWT/Swing。",
+    "severity": null
+  },
+  {
+    "id": "CWE-576",
+    "name": "EJB不良实践：使用Java I/O",
+    "description": "违反EJB规范使用java.io包。",
+    "severity": null
+  },
+  {
+    "id": "CWE-577",
+    "name": "EJB不良实践：使用套接字",
+    "description": "违反EJB规范使用套接字。",
+    "severity": null
+  },
+  {
+    "id": "CWE-578",
+    "name": "EJB不良实践：使用类加载器",
+    "description": "违反EJB规范使用类加载器。",
+    "severity": null
+  },
+  {
+    "id": "CWE-579",
+    "name": "J2EE不良实践：在会话中存储非可序列化对象",
+    "description": "将非可序列化对象存储为HttpSession属性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-58",
+    "name": "路径等价：Windows 8.3文件名",
+    "description": "Windows系统上限制长文件名访问，但8.3短文件名可绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-580",
+    "name": "clone()方法未调用super.clone()",
+    "description": "克隆方法未调用父类克隆。",
+    "severity": null
+  },
+  {
+    "id": "CWE-581",
+    "name": "对象模型违反：仅定义了equals或hashcode之一",
+    "description": "产品未保持相等对象哈希码一致。",
+    "severity": null
+  },
+  {
+    "id": "CWE-582",
+    "name": "数组声明为public final static",
+    "description": "声明为public final static的数组仍可被修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-583",
+    "name": "finalize()方法声明为public",
+    "description": "违反移动代码安全原则。",
+    "severity": null
+  },
+  {
+    "id": "CWE-584",
+    "name": "finally块中的返回语句",
+    "description": "finally中的return会掩盖异常。",
+    "severity": null
+  },
+  {
+    "id": "CWE-585",
+    "name": "空同步块",
+    "description": "产品包含空同步块。",
+    "severity": null
+  },
+  {
+    "id": "CWE-586",
+    "name": "显式调用finalize()",
+    "description": "从finalizer外部显式调用finalize()。",
+    "severity": null
+  },
+  {
+    "id": "CWE-587",
+    "name": "将固定地址赋值给指针",
+    "description": "产品将指针设置为非NULL的特定地址。",
+    "severity": null
+  },
+  {
+    "id": "CWE-588",
+    "name": "尝试访问非结构指针的子元素",
+    "description": "将非结构类型强制转换为结构类型并访问字段。",
+    "severity": null
+  },
+  {
+    "id": "CWE-589",
+    "name": "调用非通用API",
+    "description": "产品使用不存在于所有目标平台的API函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-59",
+    "name": "链接跟随（符号链接）",
+    "description": "产品打开文件时未防止符号链接导致访问其他文件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-590",
+    "name": "释放非堆内存",
+    "description": "对非堆分配内存调用free()。",
+    "severity": null
+  },
+  {
+    "id": "CWE-591",
+    "name": "在不适当锁定的内存中存储敏感数据",
+    "description": "产品将敏感数据存储在未锁定或错误锁定的内存中。",
+    "severity": null
+  },
+  {
+    "id": "CWE-593",
+    "name": "认证绕过：创建SSL对象后修改OpenSSL CTX",
+    "description": "产品在连接开始后修改SSL上下文。",
+    "severity": null
+  },
+  {
+    "id": "CWE-594",
+    "name": "J2EE框架：将不可序列化对象保存到磁盘",
+    "description": "容器尝试写入不可序列化对象时无保证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-595",
+    "name": "比较对象引用而非内容",
+    "description": "产品比较引用而非内容。",
+    "severity": null
+  },
+  {
+    "id": "CWE-597",
+    "name": "字符串比较中使用错误运算符",
+    "description": "如使用\"==\"而非.equals()。",
+    "severity": null
+  },
+  {
+    "id": "CWE-598",
+    "name": "使用含敏感查询字符串的HTTP请求",
+    "description": "Web应用使用HTTP方法处理请求，但包含敏感信息在查询字符串中。",
+    "severity": null
+  },
+  {
+    "id": "CWE-599",
+    "name": "OpenSSL证书验证缺失",
+    "description": "产品使用OpenSSL但未使用SSL_get_verify_result()验证证书。",
+    "severity": null
+  },
+  {
+    "id": "CWE-6",
+    "name": "J2EE配置错误：会话ID长度不足",
+    "description": "J2EE配置使用的会话ID长度不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-600",
+    "name": "Servlet中未捕获异常",
+    "description": "Servlet未捕获所有异常，可能泄露调试信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-601",
+    "name": "URL重定向到不可信站点（开放重定向）",
+    "description": "Web应用接受用户控制的重定向链接。",
+    "severity": null
+  },
+  {
+    "id": "CWE-602",
+    "name": "客户端强制执行服务端安全",
+    "description": "服务器依赖客户端实现安全机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-603",
+    "name": "使用客户端认证",
+    "description": "产品在客户端代码中进行认证而非服务端。",
+    "severity": null
+  },
+  {
+    "id": "CWE-605",
+    "name": "多个套接字绑定到同一端口",
+    "description": "多套接字绑定同一端口可能导致端口劫持。",
+    "severity": null
+  },
+  {
+    "id": "CWE-606",
+    "name": "循环条件输入未检查",
+    "description": "产品未正确检查用于循环条件的输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-607",
+    "name": "公共静态final字段引用可变对象",
+    "description": "公共静态final字段引用可变对象，允许修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-608",
+    "name": "Struts: ActionForm类中的非私有字段",
+    "description": "ActionForm类字段未声明private，可被访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-609",
+    "name": "双重检查锁定",
+    "description": "使用双重检查锁定访问资源，可能出错。",
+    "severity": null
+  },
+  {
+    "id": "CWE-61",
+    "name": "UNIX符号链接跟随",
+    "description": "产品打开文件时未考虑符号链接。",
+    "severity": null
+  },
+  {
+    "id": "CWE-610",
+    "name": "外部控制对另一范围资源的引用",
+    "description": "产品使用外部控制名称引用其他范围资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-611",
+    "name": "XML外部实体引用限制不当",
+    "description": "产品处理XML时允许外部实体解析。",
+    "severity": null
+  },
+  {
+    "id": "CWE-612",
+    "name": "包含敏感信息的索引授权不当",
+    "description": "产品创建私有文档搜索索引，但未限制访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-613",
+    "name": "会话过期不足",
+    "description": "网站允许攻击者重用旧会话ID。",
+    "severity": null
+  },
+  {
+    "id": "CWE-614",
+    "name": "HTTPS会话中敏感Cookie未设置Secure属性",
+    "description": "敏感Cookie在HTTPS中未设置Secure属性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-615",
+    "name": "源代码注释中包含敏感信息",
+    "description": "注释中留下重要数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-616",
+    "name": "（PHP）上传文件变量识别不完整",
+    "description": "PHP应用使用旧方法处理上传文件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-617",
+    "name": "可达断言",
+    "description": "产品包含可被攻击者触发的assert()语句。",
+    "severity": null
+  },
+  {
+    "id": "CWE-618",
+    "name": "暴露不安全的ActiveX方法",
+    "description": "ActiveX控件暴露危险方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-619",
+    "name": "悬空数据库游标（游标注入）",
+    "description": "游标未正确关闭可能被其他用户访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-62",
+    "name": "UNIX硬链接",
+    "description": "产品打开文件时未防止硬链接导致越权访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-620",
+    "name": "未经验证的密码更改",
+    "description": "设置新密码时不要求原密码验证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-621",
+    "name": "变量提取错误",
+    "description": "产品使用外部输入确定变量名进行提取。",
+    "severity": null
+  },
+  {
+    "id": "CWE-622",
+    "name": "函数钩子参数验证不当",
+    "description": "产品添加钩子但未验证参数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-623",
+    "name": "标记为安全脚本的不安全ActiveX控件",
+    "description": "ActiveX控件被标记为安全脚本，但实际不安全。",
+    "severity": null
+  },
+  {
+    "id": "CWE-624",
+    "name": "可执行正则表达式错误",
+    "description": "产品使用的正则表达式包含可执行组件或用户可控内容。",
+    "severity": null
+  },
+  {
+    "id": "CWE-625",
+    "name": "允许性正则表达式",
+    "description": "产品使用的正则表达式未充分限制允许值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-626",
+    "name": "空字节交互错误（毒空字节）",
+    "description": "产品在传递数据时未正确处理空字节。",
+    "severity": null
+  },
+  {
+    "id": "CWE-627",
+    "name": "动态变量求值",
+    "description": "在用户可影响变量名的语言中，未限制变量名可能导致意外访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-628",
+    "name": "函数调用参数指定错误",
+    "description": "产品调用函数时参数指定错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-636",
+    "name": "不安全失败（“失败开放”）",
+    "description": "产品在错误条件下回退到不安全状态。",
+    "severity": null
+  },
+  {
+    "id": "CWE-637",
+    "name": "保护机制不必要的复杂性（未使用“经济机制”）",
+    "description": "产品使用比必要更复杂的机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-638",
+    "name": "未使用完整中介",
+    "description": "产品每次访问资源时未执行访问检查。",
+    "severity": null
+  },
+  {
+    "id": "CWE-639",
+    "name": "通过用户控制的主键绕过授权",
+    "description": "授权功能未防止用户访问其他用户数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-64",
+    "name": "Windows快捷方式跟随（.LNK）",
+    "description": "产品打开文件时未处理.LNK文件导致越权访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-640",
+    "name": "弱密码恢复机制",
+    "description": "密码恢复机制允许攻击者获取或更改密码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-641",
+    "name": "文件和其他资源名称限制不当",
+    "description": "产品使用输入构造资源名称，未限制特殊字符或路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-642",
+    "name": "关键状态数据外部控制",
+    "description": "产品将安全关键状态信息存储在可外部控制的位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-643",
+    "name": "XPath表达式中数据中和不当（XPath注入）",
+    "description": "产品使用外部输入构造XPath表达式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-644",
+    "name": "HTTP头脚本语法中和不当",
+    "description": "产品未正确中和HTTP头中的脚本语法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-645",
+    "name": "账户锁定机制过于严格",
+    "description": "账户锁定机制过于严格导致拒绝服务。",
+    "severity": null
+  },
+  {
+    "id": "CWE-646",
+    "name": "依赖外部提供文件的文件名或扩展名",
+    "description": "产品依赖上传文件的名称或扩展名进行安全决策。",
+    "severity": null
+  },
+  {
+    "id": "CWE-647",
+    "name": "使用非规范URL路径进行授权决策",
+    "description": "产品基于非规范路径进行授权。",
+    "severity": null
+  },
+  {
+    "id": "CWE-648",
+    "name": "特权API使用不正确",
+    "description": "产品未遵循需要额外特权的API要求。",
+    "severity": null
+  },
+  {
+    "id": "CWE-649",
+    "name": "依赖混淆或加密而不进行完整性检查",
+    "description": "产品使用混淆或加密输入但未验证完整性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-65",
+    "name": "Windows硬链接",
+    "description": "产品打开文件时未防止硬链接。",
+    "severity": null
+  },
+  {
+    "id": "CWE-650",
+    "name": "信任服务器端HTTP权限方法",
+    "description": "服务器认为使用GET的URI是只读的，但实际可修改。",
+    "severity": null
+  },
+  {
+    "id": "CWE-651",
+    "name": "WSDL文件暴露敏感信息",
+    "description": "Web服务暴露WSDL文件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-652",
+    "name": "XQuery表达式中数据中和不当（XQuery注入）",
+    "description": "产品使用外部输入构造XQuery表达式。",
+    "severity": null
+  },
+  {
+    "id": "CWE-653",
+    "name": "隔离或分区不当",
+    "description": "产品未正确分隔功能、进程或资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-654",
+    "name": "安全决策依赖单一因素",
+    "description": "保护机制主要依赖单一条件评估。",
+    "severity": null
+  },
+  {
+    "id": "CWE-655",
+    "name": "心理可接受性不足",
+    "description": "保护机制太难用，鼓励用户绕过。",
+    "severity": null
+  },
+  {
+    "id": "CWE-656",
+    "name": "依赖通过模糊实现安全",
+    "description": "产品依赖模糊性作为主要强度。",
+    "severity": null
+  },
+  {
+    "id": "CWE-657",
+    "name": "违反安全设计原则",
+    "description": "产品违反公认的安全设计原则。",
+    "severity": null
+  },
+  {
+    "id": "CWE-66",
+    "name": "虚拟资源文件名处理不当",
+    "description": "产品未正确处理虚拟资源文件名。",
+    "severity": null
+  },
+  {
+    "id": "CWE-662",
+    "name": "同步不当",
+    "description": "产品在多线程环境中未正确同步。",
+    "severity": null
+  },
+  {
+    "id": "CWE-663",
+    "name": "在并发上下文中使用非可重入函数",
+    "description": "产品在并发上下文中调用非可重入函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-664",
+    "name": "资源生命周期控制不当",
+    "description": "产品未正确维护对资源的控制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-665",
+    "name": "初始化不当",
+    "description": "产品未正确初始化资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-666",
+    "name": "资源生命周期阶段错误操作",
+    "description": "产品在资源错误阶段执行操作。",
+    "severity": null
+  },
+  {
+    "id": "CWE-667",
+    "name": "锁定不当",
+    "description": "产品未正确获取或释放锁。",
+    "severity": null
+  },
+  {
+    "id": "CWE-668",
+    "name": "资源暴露给错误范围",
+    "description": "产品将资源暴露给错误控制范围。",
+    "severity": null
+  },
+  {
+    "id": "CWE-669",
+    "name": "范围间资源传输错误",
+    "description": "产品未正确将资源转移到另一范围。",
+    "severity": null
+  },
+  {
+    "id": "CWE-67",
+    "name": "Windows设备名称处理不当",
+    "description": "产品未正确处理Windows设备名路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-670",
+    "name": "始终错误的控制流实现",
+    "description": "代码控制流路径未反映算法意图。",
+    "severity": null
+  },
+  {
+    "id": "CWE-671",
+    "name": "管理员对安全控制不足",
+    "description": "产品安全功能阻止管理员调整策略。",
+    "severity": null
+  },
+  {
+    "id": "CWE-672",
+    "name": "过期或释放后操作资源",
+    "description": "产品在资源过期或释放后使用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-673",
+    "name": "范围定义外部影响",
+    "description": "产品未防止控制范围定义受外部影响。",
+    "severity": null
+  },
+  {
+    "id": "CWE-674",
+    "name": "递归不受控制",
+    "description": "产品未控制递归深度，导致资源耗尽。",
+    "severity": null
+  },
+  {
+    "id": "CWE-675",
+    "name": "单操作上下文中的多操作",
+    "description": "产品在应单次操作资源时执行多次。",
+    "severity": null
+  },
+  {
+    "id": "CWE-676",
+    "name": "使用潜在危险函数",
+    "description": "产品调用可能引入漏洞的危险函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-680",
+    "name": "整数溢出导致缓冲区溢出",
+    "description": "产品计算内存分配大小时发生整数溢出。",
+    "severity": null
+  },
+  {
+    "id": "CWE-681",
+    "name": "数字类型间转换错误",
+    "description": "类型转换导致数据丢失或误解。",
+    "severity": null
+  },
+  {
+    "id": "CWE-682",
+    "name": "计算错误",
+    "description": "产品执行计算产生不正确结果。",
+    "severity": null
+  },
+  {
+    "id": "CWE-683",
+    "name": "函数调用参数顺序错误",
+    "description": "产品调用函数时参数顺序错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-684",
+    "name": "指定功能提供错误",
+    "description": "代码未按规范执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-685",
+    "name": "函数调用参数数量错误",
+    "description": "产品调用函数时参数数量错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-686",
+    "name": "函数调用参数类型错误",
+    "description": "产品调用函数时参数类型错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-687",
+    "name": "函数调用参数值指定错误",
+    "description": "产品调用函数时参数值错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-688",
+    "name": "函数调用变量或引用错误",
+    "description": "产品调用函数时使用错误变量或引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-689",
+    "name": "资源复制时权限竞争条件",
+    "description": "产品在复制或克隆资源时未正确设置权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-69",
+    "name": "Windows ::DATA备用数据流处理不当",
+    "description": "产品未阻止或检测备用数据流访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-690",
+    "name": "未检查返回值导致空指针解引用",
+    "description": "产品未检查可能返回NULL的函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-691",
+    "name": "控制流管理不足",
+    "description": "代码未充分管理控制流。",
+    "severity": null
+  },
+  {
+    "id": "CWE-692",
+    "name": "不完整的XSS禁用列表",
+    "description": "产品使用禁用列表防御XSS，但不完整。",
+    "severity": null
+  },
+  {
+    "id": "CWE-693",
+    "name": "保护机制失效",
+    "description": "产品未使用或错误使用保护机制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-694",
+    "name": "使用重复标识符的多个资源",
+    "description": "产品使用可重复的标识符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-695",
+    "name": "使用低级功能",
+    "description": "产品使用框架禁止的低级功能。",
+    "severity": null
+  },
+  {
+    "id": "CWE-696",
+    "name": "行为顺序错误",
+    "description": "产品按错误顺序执行行为。",
+    "severity": null
+  },
+  {
+    "id": "CWE-697",
+    "name": "比较错误",
+    "description": "产品在安全上下文中比较实体但比较错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-698",
+    "name": "重定向后执行（EAR）",
+    "description": "Web应用发送重定向后未退出，继续执行。",
+    "severity": null
+  },
+  {
+    "id": "CWE-7",
+    "name": "J2EE配置错误：缺少自定义错误页",
+    "description": "默认错误页可能泄露敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-703",
+    "name": "异常条件检查或处理不当",
+    "description": "产品未正确处理罕见异常条件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-704",
+    "name": "类型转换或强制转换错误",
+    "description": "产品将对象从一种类型错误转换为另一种。",
+    "severity": null
+  },
+  {
+    "id": "CWE-705",
+    "name": "控制流作用域错误",
+    "description": "产品完成任务后未正确返回控制流。",
+    "severity": null
+  },
+  {
+    "id": "CWE-706",
+    "name": "名称或引用解析错误",
+    "description": "产品使用名称访问资源，但解析到错误资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-707",
+    "name": "中和不当",
+    "description": "产品未确保结构化消息格式良好。",
+    "severity": null
+  },
+  {
+    "id": "CWE-708",
+    "name": "所有权分配错误",
+    "description": "产品将资源分配给错误所有者。",
+    "severity": null
+  },
+  {
+    "id": "CWE-710",
+    "name": "编码标准遵循不足",
+    "description": "产品未遵循安全编码规则。",
+    "severity": null
+  },
+  {
+    "id": "CWE-72",
+    "name": "Apple HFS+备用数据流路径处理不当",
+    "description": "产品未正确处理特殊路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-73",
+    "name": "文件名或路径外部控制",
+    "description": "产品允许用户控制文件路径。",
+    "severity": null
+  },
+  {
+    "id": "CWE-732",
+    "name": "关键资源权限分配错误",
+    "description": "产品为安全关键资源分配了不安全权限。",
+    "severity": null
+  },
+  {
+    "id": "CWE-733",
+    "name": "编译器优化移除或修改安全关键代码",
+    "description": "编译器优化移除安全保护代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-74",
+    "name": "下游组件输出中特殊元素中和不当（注入）",
+    "description": "产品构造命令或数据时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-749",
+    "name": "暴露危险方法或函数",
+    "description": "产品提供API但未限制危险方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-75",
+    "name": "不同平面特殊元素净化失败",
+    "description": "产品未充分过滤具有控制含义的特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-754",
+    "name": "异常或意外条件检查不当",
+    "description": "产品未检查罕见条件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-755",
+    "name": "异常条件处理不当",
+    "description": "产品未正确处理异常。",
+    "severity": null
+  },
+  {
+    "id": "CWE-756",
+    "name": "缺少自定义错误页",
+    "description": "产品未返回自定义错误页。",
+    "severity": null
+  },
+  {
+    "id": "CWE-757",
+    "name": "协商期间选择较不安全算法（算法降级）",
+    "description": "协议允许攻击者降级算法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-758",
+    "name": "依赖未定义、未指定或实现定义行为",
+    "description": "产品使用依赖未定义行为的API。",
+    "severity": null
+  },
+  {
+    "id": "CWE-759",
+    "name": "使用无盐的单向哈希",
+    "description": "产品使用无盐哈希。",
+    "severity": null
+  },
+  {
+    "id": "CWE-76",
+    "name": "等价特殊元素中和不当",
+    "description": "产品正确中和某些元素，但未处理等价变体。",
+    "severity": null
+  },
+  {
+    "id": "CWE-760",
+    "name": "使用可预测盐的单向哈希",
+    "description": "产品使用可预测盐。",
+    "severity": null
+  },
+  {
+    "id": "CWE-761",
+    "name": "释放指针未指向缓冲区起始",
+    "description": "调用free()时指针偏移不正确。",
+    "severity": null
+  },
+  {
+    "id": "CWE-762",
+    "name": "内存管理例程不匹配",
+    "description": "产品调用错误释放函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-763",
+    "name": "释放无效指针或引用",
+    "description": "产品调用错误释放函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-764",
+    "name": "多次锁定关键资源",
+    "description": "产品锁定次数多于预期。",
+    "severity": null
+  },
+  {
+    "id": "CWE-765",
+    "name": "多次解锁关键资源",
+    "description": "产品解锁次数多于预期。",
+    "severity": null
+  },
+  {
+    "id": "CWE-766",
+    "name": "关键数据元素声明为public",
+    "description": "产品将关键变量声明为public。",
+    "severity": null
+  },
+  {
+    "id": "CWE-767",
+    "name": "通过公共方法访问私有变量",
+    "description": "产品定义公共方法读写私有变量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-768",
+    "name": "短路评估错误",
+    "description": "产品条件语句中逻辑表达式顺序导致错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-77",
+    "name": "命令中特殊元素中和不当（命令注入）",
+    "description": "产品构造命令时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-770",
+    "name": "资源分配无限制或节流",
+    "description": "产品为角色分配资源无限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-771",
+    "name": "缺少对已分配资源的引用",
+    "description": "产品未维护已分配资源的引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-772",
+    "name": "有效生命周期后未释放资源",
+    "description": "产品在资源生命周期结束后未释放。",
+    "severity": null
+  },
+  {
+    "id": "CWE-773",
+    "name": "缺少对活动文件描述符或句柄的引用",
+    "description": "产品未维护引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-774",
+    "name": "文件描述符或句柄分配无限制",
+    "description": "产品分配文件描述符无限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-775",
+    "name": "有效生命周期后未释放文件描述符",
+    "description": "产品未释放已过期的文件描述符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-776",
+    "name": "DTD中递归实体引用限制不当（XML实体扩展）",
+    "description": "产品允许DTD定义递归实体导致膨胀。",
+    "severity": null
+  },
+  {
+    "id": "CWE-777",
+    "name": "无锚点的正则表达式",
+    "description": "产品使用无锚点正则表达式进行过滤。",
+    "severity": null
+  },
+  {
+    "id": "CWE-778",
+    "name": "日志记录不足",
+    "description": "产品未记录安全关键事件或遗漏重要信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-779",
+    "name": "日志记录过多数据",
+    "description": "产品记录过多信息，阻碍处理。",
+    "severity": null
+  },
+  {
+    "id": "CWE-78",
+    "name": "OS命令中特殊元素中和不当（OS命令注入）",
+    "description": "产品构造OS命令时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-780",
+    "name": "使用RSA算法未使用OAEP",
+    "description": "产品使用RSA但未采用OAEP填充。",
+    "severity": null
+  },
+  {
+    "id": "CWE-781",
+    "name": "IOCTL中地址验证不当（METHOD_NEITHER）",
+    "description": "产品定义IOCTL使用METHOD_NEITHER但未验证地址。",
+    "severity": null
+  },
+  {
+    "id": "CWE-782",
+    "name": "暴露的IOCTL访问控制不足",
+    "description": "产品实现IOCTL功能但访问控制不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-783",
+    "name": "运算符优先级逻辑错误",
+    "description": "产品使用表达式，运算符优先级导致错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-784",
+    "name": "安全决策依赖Cookie而未验证",
+    "description": "产品依赖Cookie值进行安全决策。",
+    "severity": null
+  },
+  {
+    "id": "CWE-785",
+    "name": "使用路径操作函数未提供最大大小缓冲区",
+    "description": "产品调用路径规范化函数但缓冲区不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-786",
+    "name": "缓冲区起始前内存访问",
+    "description": "产品使用索引或指针引用缓冲区之前位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-787",
+    "name": "越界写入",
+    "description": "产品写入缓冲区起始之前或结束之后。",
+    "severity": null
+  },
+  {
+    "id": "CWE-788",
+    "name": "缓冲区结束后内存访问",
+    "description": "产品引用缓冲区之后位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-789",
+    "name": "内存分配大小过大",
+    "description": "产品基于不可信大值分配内存，未确保安全性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-79",
+    "name": "网页生成期间输入中和不当（跨站脚本）",
+    "description": "产品未正确中和用户输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-790",
+    "name": "特殊元素过滤不当",
+    "description": "产品未充分过滤特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-791",
+    "name": "特殊元素过滤不完整",
+    "description": "产品未完全过滤特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-792",
+    "name": "一个或多个特殊元素实例过滤不完整",
+    "description": "产品未完全过滤一个或多个实例。",
+    "severity": null
+  },
+  {
+    "id": "CWE-793",
+    "name": "仅过滤特殊元素的一个实例",
+    "description": "产品仅过滤单个实例。",
+    "severity": null
+  },
+  {
+    "id": "CWE-794",
+    "name": "多个实例过滤不完整",
+    "description": "产品未过滤所有实例。",
+    "severity": null
+  },
+  {
+    "id": "CWE-795",
+    "name": "仅过滤指定位置的特殊元素",
+    "description": "产品仅考虑指定位置的特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-796",
+    "name": "仅过滤相对于标记的特殊元素",
+    "description": "产品仅考虑相对于标记的位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-797",
+    "name": "仅过滤绝对位置的特殊元素",
+    "description": "产品仅考虑绝对位置。",
+    "severity": null
+  },
+  {
+    "id": "CWE-798",
+    "name": "使用硬编码凭据",
+    "description": "产品包含硬编码凭据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-799",
+    "name": "交互频率控制不当",
+    "description": "产品未限制与角色的交互频率。",
+    "severity": null
+  },
+  {
+    "id": "CWE-8",
+    "name": "J2EE配置错误：实体Bean声明为远程",
+    "description": "暴露远程接口可能泄露方法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-80",
+    "name": "网页中脚本相关HTML标签中和不当（基本XSS）",
+    "description": "产品未中和脚本标签。",
+    "severity": null
+  },
+  {
+    "id": "CWE-804",
+    "name": "可猜测的验证码",
+    "description": "产品使用的验证码可被猜测或自动识别。",
+    "severity": null
+  },
+  {
+    "id": "CWE-805",
+    "name": "使用错误长度值的缓冲区访问",
+    "description": "产品使用错误长度值进行顺序读写。",
+    "severity": null
+  },
+  {
+    "id": "CWE-806",
+    "name": "使用源缓冲区大小的缓冲区访问",
+    "description": "产品使用源缓冲区大小操作目标缓冲区。",
+    "severity": null
+  },
+  {
+    "id": "CWE-807",
+    "name": "安全决策依赖不可信输入",
+    "description": "产品依赖输入值进行安全决策。",
+    "severity": null
+  },
+  {
+    "id": "CWE-81",
+    "name": "错误消息网页中脚本中和不当",
+    "description": "产品未中和错误页中的脚本。",
+    "severity": null
+  },
+  {
+    "id": "CWE-82",
+    "name": "IMG标签属性中脚本中和不当",
+    "description": "产品未中和IMG属性中的脚本。",
+    "severity": null
+  },
+  {
+    "id": "CWE-820",
+    "name": "缺少同步",
+    "description": "产品在并发环境中未尝试同步共享资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-821",
+    "name": "同步错误",
+    "description": "产品同步机制不正确。",
+    "severity": null
+  },
+  {
+    "id": "CWE-822",
+    "name": "不可信指针解引用",
+    "description": "产品将不可信值转换为指针并解引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-823",
+    "name": "使用超出范围的指针偏移",
+    "description": "产品指针算术使用超出范围的偏移。",
+    "severity": null
+  },
+  {
+    "id": "CWE-824",
+    "name": "访问未初始化的指针",
+    "description": "产品访问未初始化指针。",
+    "severity": null
+  },
+  {
+    "id": "CWE-825",
+    "name": "过期指针解引用",
+    "description": "产品解引用包含已释放内存位置的指针。",
+    "severity": null
+  },
+  {
+    "id": "CWE-826",
+    "name": "预期生命周期内过早释放资源",
+    "description": "产品在资源仍被使用时释放。",
+    "severity": null
+  },
+  {
+    "id": "CWE-827",
+    "name": "文档类型定义控制不当",
+    "description": "产品未限制DTD引用。",
+    "severity": null
+  },
+  {
+    "id": "CWE-828",
+    "name": "信号处理程序包含非异步安全功能",
+    "description": "产品信号处理程序包含非异步安全代码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-829",
+    "name": "从不可信控制范围包含功能",
+    "description": "产品从不可信源引入可执行功能。",
+    "severity": null
+  },
+  {
+    "id": "CWE-83",
+    "name": "网页属性中脚本中和不当",
+    "description": "产品未中和\"javascript:\"等URI。",
+    "severity": null
+  },
+  {
+    "id": "CWE-830",
+    "name": "从不可信源包含Web功能",
+    "description": "产品从其他域包含Web组件。",
+    "severity": null
+  },
+  {
+    "id": "CWE-831",
+    "name": "信号处理函数关联多个信号",
+    "description": "产品为多个信号定义同一处理函数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-832",
+    "name": "解锁未锁定的资源",
+    "description": "产品尝试解锁未锁定的资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-833",
+    "name": "死锁",
+    "description": "产品多线程等待彼此释放锁。",
+    "severity": null
+  },
+  {
+    "id": "CWE-834",
+    "name": "过度迭代",
+    "description": "产品循环未限制迭代次数。",
+    "severity": null
+  },
+  {
+    "id": "CWE-835",
+    "name": "循环出口条件不可达（无限循环）",
+    "description": "产品循环条件无法达到。",
+    "severity": null
+  },
+  {
+    "id": "CWE-836",
+    "name": "使用密码哈希而非密码进行认证",
+    "description": "产品使用密码哈希进行认证。",
+    "severity": null
+  },
+  {
+    "id": "CWE-837",
+    "name": "单一唯一操作强制不足",
+    "description": "产品要求角色只能执行一次操作，但未强制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-838",
+    "name": "输出上下文编码不当",
+    "description": "产品为输出指定错误编码。",
+    "severity": null
+  },
+  {
+    "id": "CWE-839",
+    "name": "未检查最小值范围比较",
+    "description": "产品检查最大值但未检查最小值。",
+    "severity": null
+  },
+  {
+    "id": "CWE-84",
+    "name": "网页中编码URI方案中和不当",
+    "description": "产品未正确中和可执行脚本的URI。",
+    "severity": null
+  },
+  {
+    "id": "CWE-841",
+    "name": "行为工作流强制不足",
+    "description": "产品支持多步行为，但未强制顺序。",
+    "severity": null
+  },
+  {
+    "id": "CWE-842",
+    "name": "将用户放入错误组",
+    "description": "产品将用户放入错误组。",
+    "severity": null
+  },
+  {
+    "id": "CWE-843",
+    "name": "使用不兼容类型访问资源（类型混淆）",
+    "description": "产品使用一种类型分配资源，但使用另一种类型访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-85",
+    "name": "双重字符XSS操纵",
+    "description": "Web应用未过滤使用双重字符的脚本。",
+    "severity": null
+  },
+  {
+    "id": "CWE-86",
+    "name": "网页标识符中无效字符中和不当",
+    "description": "产品未中和无效字符或字节序列。",
+    "severity": null
+  },
+  {
+    "id": "CWE-862",
+    "name": "缺少授权",
+    "description": "产品在访问资源时未执行授权检查。",
+    "severity": null
+  },
+  {
+    "id": "CWE-863",
+    "name": "授权错误",
+    "description": "产品授权检查不正确。",
+    "severity": null
+  },
+  {
+    "id": "CWE-87",
+    "name": "替代XSS语法中和不当",
+    "description": "产品未中和替代XSS语法。",
+    "severity": null
+  },
+  {
+    "id": "CWE-88",
+    "name": "命令参数分隔符中和不当（参数注入）",
+    "description": "产品构造命令时未中和参数分隔符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-89",
+    "name": "SQL命令特殊元素中和不当（SQL注入）",
+    "description": "产品构造SQL命令时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-9",
+    "name": "J2EE配置错误：EJB方法弱访问权限",
+    "description": "EJB方法权限过高。",
+    "severity": null
+  },
+  {
+    "id": "CWE-90",
+    "name": "LDAP查询特殊元素中和不当（LDAP注入）",
+    "description": "产品构造LDAP查询时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-908",
+    "name": "使用未初始化资源",
+    "description": "产品使用未初始化的资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-909",
+    "name": "资源初始化缺失",
+    "description": "产品未初始化关键资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-91",
+    "name": "XML注入（盲XPath注入）",
+    "description": "产品未正确中和XML特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-910",
+    "name": "使用已关闭的文件描述符",
+    "description": "产品使用已关闭的文件描述符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-911",
+    "name": "引用计数更新错误",
+    "description": "产品使用引用计数管理资源但更新错误。",
+    "severity": null
+  },
+  {
+    "id": "CWE-912",
+    "name": "隐藏功能",
+    "description": "产品包含未文档化或规范外的功能。",
+    "severity": null
+  },
+  {
+    "id": "CWE-913",
+    "name": "动态管理代码资源控制不当",
+    "description": "产品未限制读写动态代码资源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-914",
+    "name": "动态识别变量控制不当",
+    "description": "产品未限制读写动态识别变量。",
+    "severity": null
+  },
+  {
+    "id": "CWE-915",
+    "name": "动态确定对象属性修改控制不当",
+    "description": "产品接收输入指定多个属性但未限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-916",
+    "name": "密码哈希计算资源不足",
+    "description": "产品生成密码哈希时计算量不足。",
+    "severity": null
+  },
+  {
+    "id": "CWE-917",
+    "name": "表达式语言语句中特殊元素中和不当（EL注入）",
+    "description": "产品构造EL语句时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-918",
+    "name": "服务端请求伪造（SSRF）",
+    "description": "Web服务器接收URL并从上游组件检索内容。",
+    "severity": null
+  },
+  {
+    "id": "CWE-920",
+    "name": "功耗限制不当",
+    "description": "产品在功耗受限环境中未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-921",
+    "name": "无访问控制机制中存储敏感数据",
+    "description": "产品在无内置访问控制的设备中存储敏感信息。",
+    "severity": null
+  },
+  {
+    "id": "CWE-922",
+    "name": "敏感信息不安全存储",
+    "description": "产品存储敏感信息但未限制访问。",
+    "severity": null
+  },
+  {
+    "id": "CWE-923",
+    "name": "通信通道端点限制不当",
+    "description": "产品为特权或受保护操作建立通信通道到错误端点。",
+    "severity": null
+  },
+  {
+    "id": "CWE-924",
+    "name": "通信通道中消息完整性强制不足",
+    "description": "产品接收消息但未验证完整性。",
+    "severity": null
+  },
+  {
+    "id": "CWE-925",
+    "name": "广播接收器意图验证不当",
+    "description": "Android应用使用Broadcast Receiver但未验证Intent。",
+    "severity": null
+  },
+  {
+    "id": "CWE-926",
+    "name": "Android组件导出不当",
+    "description": "Android应用导出组件但未正确限制。",
+    "severity": null
+  },
+  {
+    "id": "CWE-927",
+    "name": "使用隐式Intent进行敏感通信",
+    "description": "Android应用使用隐式Intent传输敏感数据。",
+    "severity": null
+  },
+  {
+    "id": "CWE-93",
+    "name": "CRLF序列中和不当（CRLF注入）",
+    "description": "产品使用CRLF作为特殊元素，但未中和。",
+    "severity": null
+  },
+  {
+    "id": "CWE-939",
+    "name": "自定义URL方案处理程序授权不当",
+    "description": "产品为自定义URL方案提供处理程序，但授权不当。",
+    "severity": null
+  },
+  {
+    "id": "CWE-94",
+    "name": "代码生成控制不当（代码注入）",
+    "description": "产品构造代码段时使用外部输入。",
+    "severity": null
+  },
+  {
+    "id": "CWE-940",
+    "name": "通信通道来源验证不当",
+    "description": "产品建立通信通道处理请求，但未验证来源。",
+    "severity": null
+  },
+  {
+    "id": "CWE-941",
+    "name": "通信通道中指定目的地错误",
+    "description": "产品创建通信通道发起请求时指定了错误目的地。",
+    "severity": null
+  },
+  {
+    "id": "CWE-942",
+    "name": "允许跨域策略与不可信域",
+    "description": "产品使用CSP或跨域策略允许不可信域。",
+    "severity": null
+  },
+  {
+    "id": "CWE-943",
+    "name": "数据查询逻辑中特殊元素中和不当",
+    "description": "产品生成数据查询时未中和特殊元素。",
+    "severity": null
+  },
+  {
+    "id": "CWE-95",
+    "name": "动态评估代码中指令中和不当（Eval注入）",
+    "description": "产品未中和动态评估代码中的指令。",
+    "severity": null
+  },
+  {
+    "id": "CWE-96",
+    "name": "静态保存代码中指令中和不当（静态代码注入）",
+    "description": "产品未中和静态保存代码中的指令。",
+    "severity": null
+  },
+  {
+    "id": "CWE-97",
+    "name": "网页中服务端包含（SSI）中和不当",
+    "description": "产品生成网页时未中和SSI指令。",
+    "severity": null
+  },
+  {
+    "id": "CWE-98",
+    "name": "PHP远程文件包含（include/require文件名控制不当）",
+    "description": "PHP应用未限制包含文件名。",
+    "severity": null
+  },
+  {
+    "id": "CWE-99",
+    "name": "资源标识符控制不当（资源注入）",
+    "description": "产品未限制资源标识符。",
+    "severity": null
+  },
+  {
+    "id": "CWE-0",
+    "name": "其他",
+    "description": "其他",
+    "severity": null
+  }
+]
