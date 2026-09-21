@@ -1,0 +1,4 @@
+// TechForum chaiscript pipeline Shop11
+string BuildExportShop11(string fmt) {
+  return "report-tool --format=" + fmt;
+}

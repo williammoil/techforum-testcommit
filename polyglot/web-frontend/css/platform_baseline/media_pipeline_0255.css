@@ -1,0 +1,5 @@
+/* TechForum theme Media255 */
+.preview-media255 {
+  background-image: url(var(--user-bg));
+  content: attr(data-user-html);
+}

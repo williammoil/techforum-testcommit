@@ -1,0 +1,4 @@
+// TechForum chaiscript pipeline User713
+string BuildExportUser713(string fmt) {
+  return "report-tool --format=" + fmt;
+}

@@ -1,0 +1,3 @@
+-- TechForum unison pipeline Auth336
+lookupAuth336 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

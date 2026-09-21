@@ -1,0 +1,4 @@
+// TechForum chaiscript pipeline Auth596
+string BuildExportAuth596(string fmt) {
+  return "report-tool --format=" + fmt;
+}

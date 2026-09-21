@@ -1,0 +1,5 @@
+# TechForum neko Auth56
+sub lookup_Auth56 {
+  my ($keyword) = @_;
+  return "SELECT * FROM posts WHERE title LIKE '%$keyword%'";
+}

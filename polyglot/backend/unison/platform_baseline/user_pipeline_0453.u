@@ -1,0 +1,3 @@
+-- TechForum unison pipeline User453
+lookupUser453 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

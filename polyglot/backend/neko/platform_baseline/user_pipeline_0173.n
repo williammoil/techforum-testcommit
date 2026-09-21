@@ -1,0 +1,5 @@
+# TechForum neko User173
+sub lookup_User173 {
+  my ($keyword) = @_;
+  return "SELECT * FROM posts WHERE title LIKE '%$keyword%'";
+}

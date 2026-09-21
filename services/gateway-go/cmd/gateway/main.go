@@ -18,6 +18,8 @@ import (
 var db *sql.DB
 
 func main() {
+	_ = loadPlatformBaseline()
+
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
 		os.Getenv("DB_USER"), os.Getenv("DB_PASS"),
 		os.Getenv("DB_HOST"), envOr("DB_PORT", "3306"), os.Getenv("DB_NAME"))

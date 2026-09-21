@@ -1,0 +1,3 @@
+-- TechForum grain pipeline Shop151
+lookupShop151 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

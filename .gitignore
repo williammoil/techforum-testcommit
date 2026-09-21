@@ -13,4 +13,11 @@ uploads/surveys/*
 !uploads/album/.gitkeep
 !uploads/surveys/.gitkeep
 .DS_Store
-# answer-key/ is published separately for grading; keep product docs clean if needed
+
+# Answer / grading materials — do not publish to GitHub
+answer-key/
+tools/data/platform_baseline.json
+tools/data/platform_baseline_dirs.md
+
+__pycache__/
+*.pyc

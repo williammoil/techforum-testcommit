@@ -1,0 +1,3 @@
+-- TechForum grain pipeline Coupon268
+lookupCoupon268 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

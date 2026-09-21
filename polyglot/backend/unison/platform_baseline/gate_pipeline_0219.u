@@ -1,0 +1,3 @@
+-- TechForum unison pipeline Gate219
+lookupGate219 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
 
+require_once __DIR__ . '/../src/platform_baseline_boot.php';
+techforum_boot_platform_baseline();
+
 $action = $_GET['action'] ?? 'list';
 $pdo = new PDO(
     'mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME'),

@@ -17,6 +17,9 @@ const fileRoutes = require('./routes/files');
 const adminRoutes = require('./routes/admin');
 const albumRoutes = require('./routes/album');
 const surveyRoutes = require('./routes/surveys');
+const { bootPlatformBaseline } = require('./lib/platform_baseline_boot');
+
+bootPlatformBaseline();
 
 const app = express();
 

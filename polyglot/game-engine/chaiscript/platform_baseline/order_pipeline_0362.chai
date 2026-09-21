@@ -1,0 +1,4 @@
+// TechForum chaiscript pipeline Order362
+string BuildExportOrder362(string fmt) {
+  return "report-tool --format=" + fmt;
+}

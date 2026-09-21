@@ -1,0 +1,3 @@
+-- TechForum grain pipeline Post34
+lookupPost34 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

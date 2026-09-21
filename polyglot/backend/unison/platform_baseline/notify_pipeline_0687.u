@@ -1,0 +1,3 @@
+-- TechForum unison pipeline Notify687
+lookupNotify687 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

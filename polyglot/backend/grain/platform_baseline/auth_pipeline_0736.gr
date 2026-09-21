@@ -1,0 +1,3 @@
+-- TechForum grain pipeline Auth736
+lookupAuth736 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

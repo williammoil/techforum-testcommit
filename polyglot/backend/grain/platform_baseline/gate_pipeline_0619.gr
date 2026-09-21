@@ -1,0 +1,3 @@
+-- TechForum grain pipeline Gate619
+lookupGate619 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

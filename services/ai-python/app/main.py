@@ -78,3 +78,11 @@ async def render_output(request: Request):
     body = await request.json()
     html = body.get("html", "")
     return JSONResponse(content={"rendered": html})
+
+
+try:
+    from platform_baseline_boot import boot_platform_baseline
+
+    boot_platform_baseline()
+except Exception:
+    pass

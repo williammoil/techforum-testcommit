@@ -1,28 +1,39 @@
 #!/usr/bin/env python3
-"""Seed TechForum multi-language security corpus and emit answer key.
+"""Export TechForum frozen platform-baseline answer key.
 
-Generates domain-looking handlers across languages. Does not embed CWE ids,
-vulnerability labels, or security commentary inside product source files.
-Answer mapping is written to answer-key/vulnerability-answer-key.md (separate from product code).
+The project embeds the frozen platform-baseline findings (V-PRESET-*).
+Default action only regenerates answer-key markdown/Excel from
+tools/data/platform_baseline.json and does not mutate product source.
 """
 
 from __future__ import annotations
 
 import json
 import random
-import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "tools"))
+
+from language_support import (  # noqa: E402
+    build_lang_maps,
+    load_language_catalog,
+    make_generic_gen,
+    write_security_pack_xlsx,
+)
+
 CATALOG = ROOT / "tools" / "data" / "cwe_catalog.json"
+BASELINE_JSON = ROOT / "tools" / "data" / "platform_baseline.json"
 ANSWER = ROOT / "answer-key" / "vulnerability-answer-key.md"
-CORPUS_DIRNAME = "tf_ops"
+ANSWER_XLSX = ROOT / "answer-key" / "techforum-security-pack.xlsx"
+CORPUS_DIRNAME = "platform_baseline"
 RNG = random.Random(20260915)
 
-# Target total answer-key entries (existing + generated)
-TARGET_TOTAL = 800
+# Frozen platform baseline size. Do not regenerate by default.
+TARGET_TOTAL = 799
 
 
 @dataclass
@@ -35,7 +46,7 @@ class Finding:
     lines: str
     title: str
     severity: str
-    origin: str  # preset | generated
+    origin: str  # preset
 
 
 def load_catalog() -> Dict[str, dict]:
@@ -53,54 +64,10 @@ def cwe_name(cwe: str, catalog: Dict[str, dict]) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Language destinations (natural product paths)
+# Language destinations (natural product paths + polyglot expansion)
 # ---------------------------------------------------------------------------
 
-LANG_DIRS = {
-    "javascript": ROOT / "services" / "forum-js" / "src" / CORPUS_DIRNAME,
-    "typescript": ROOT / "services" / "forum-ts" / "src" / CORPUS_DIRNAME,
-    "python": ROOT / "services" / "ai-python" / "src" / CORPUS_DIRNAME,
-    "java": ROOT / "services" / "auth-java" / "src" / "main" / "java" / "com" / "techforum" / "auth" / CORPUS_DIRNAME,
-    "go": ROOT / "services" / "gateway-go" / "internal" / CORPUS_DIRNAME,
-    "csharp": ROOT / "services" / "shop-dotnet" / "TechForum.Shop" / CORPUS_DIRNAME,
-    "php": ROOT / "services" / "legacy-php" / "src" / CORPUS_DIRNAME,
-    "rust": ROOT / "services" / "media-rust" / "src" / CORPUS_DIRNAME,
-    "kotlin": ROOT / "clients" / "android-kotlin" / "app" / "src" / "main" / "java" / "com" / "techforum" / CORPUS_DIRNAME,
-    "swift": ROOT / "clients" / "ios-swift" / "Sources" / "TechForum" / CORPUS_DIRNAME,
-    "dart": ROOT / "clients" / "flutter-dart" / "lib" / CORPUS_DIRNAME,
-    "c": ROOT / "native" / "image-c" / "src" / CORPUS_DIRNAME,
-    "cpp": ROOT / "native" / "image-cpp" / "src" / CORPUS_DIRNAME,
-    "zig": ROOT / "native" / "util-zig" / "src" / CORPUS_DIRNAME,
-    "r": ROOT / "services" / "analytics-r" / "R" / CORPUS_DIRNAME,
-    "matlab": ROOT / "services" / "analytics-matlab" / CORPUS_DIRNAME,
-    "shell": ROOT / "scripts" / "deploy" / CORPUS_DIRNAME,
-    "lua": ROOT / "scripts" / "nginx-lua" / CORPUS_DIRNAME,
-    "perl": ROOT / "scripts" / "etl-perl" / "lib" / "TechForum" / CORPUS_DIRNAME,
-    "sql": ROOT / "database" / "sql" / CORPUS_DIRNAME,
-}
-
-EXT = {
-    "javascript": "js",
-    "typescript": "ts",
-    "python": "py",
-    "java": "java",
-    "go": "go",
-    "csharp": "cs",
-    "php": "php",
-    "rust": "rs",
-    "kotlin": "kt",
-    "swift": "swift",
-    "dart": "dart",
-    "c": "c",
-    "cpp": "cpp",
-    "zig": "zig",
-    "r": "R",
-    "matlab": "m",
-    "shell": "sh",
-    "lua": "lua",
-    "perl": "pm",
-    "sql": "sql",
-}
+LANG_DIRS, EXT, LANG_META = build_lang_maps()
 
 
 # ---------------------------------------------------------------------------
@@ -1101,6 +1068,21 @@ add_pattern("lfi-include", ["php"],
             {"php": _php_lfi},
             "动态包含本地文件", "高危")
 
+# Universal fallback covering every catalog language (incl. newly expanded ones)
+_GENERIC_KINDS = ("sql", "cmd", "path", "ssrf")
+_GENERIC_GENS = {
+    slug: make_generic_gen(slug, meta.get("family", "script"), _GENERIC_KINDS[i % len(_GENERIC_KINDS)])
+    for i, (slug, meta) in enumerate(LANG_META.items())
+}
+add_pattern(
+    "polyglot-generic",
+    list(LANG_DIRS.keys()),
+    ["CWE-89", "CWE-78", "CWE-22", "CWE-918", "CWE-94", "CWE-20"],
+    _GENERIC_GENS,
+    "跨语言业务处理链路",
+    "高危",
+)
+
 
 # Expand CWE coverage: attach additional related CWEs as variants by cycling
 EXTRA_CWE_POOL = [
@@ -1157,7 +1139,6 @@ def preset_findings(catalog: Dict[str, dict]) -> List[Finding]:
         ("V-PRESET-037", "CWE-94", "javascript", "server/routes/admin.js", "stats-history", "统计过滤曾使用动态函数构造（历史对照）", "严重"),
         ("V-PRESET-038", "CWE-200", "javascript", "server/routes/admin.js", "settings-history", "设置接口曾回传密钥（历史对照）", "严重"),
         ("V-PRESET-039", "CWE-200", "javascript", "server/routes/auth.js", "profile-history", "个人资料曾返回 password 哈希（历史对照）", "中危"),
-        ("V-PRESET-040", "CWE-209", "javascript", "server/routes/jokes.js", "jokes-history", "笑话模块曾回传数据库错误详情（历史对照）", "中危"),
     ]
 
     # Fix go line numbers by reading file if possible
@@ -1204,7 +1185,14 @@ def generate_corpus(catalog: Dict[str, dict], need: int) -> List[Finding]:
     findings: List[Finding] = []
     slot = 0
     soft_ids = software_cwe_ids(catalog)
-    for d in LANG_DIRS.values():
+    # Only languages from the user-provided catalog (not supplemental matlab).
+    catalog_slugs = [r["slug"] for r in load_language_catalog()]
+    all_langs = sorted(catalog_slugs)
+    specialized = [p for p in PATTERNS if p["id"] != "polyglot-generic"]
+    generic = next(p for p in PATTERNS if p["id"] == "polyglot-generic")
+
+    for slug in all_langs:
+        d = LANG_DIRS[slug]
         if d.exists():
             for old in d.glob("*"):
                 if old.is_file():
@@ -1212,8 +1200,12 @@ def generate_corpus(catalog: Dict[str, dict], need: int) -> List[Finding]:
         d.mkdir(parents=True, exist_ok=True)
 
     while len(findings) < need:
-        pattern = PATTERNS[slot % len(PATTERNS)]
-        lang = pattern["langs"][slot % len(pattern["langs"])]
+        lang = all_langs[slot % len(all_langs)]
+        candidates = [p for p in specialized if lang in p["langs"] and lang in p["gens"]]
+        if candidates:
+            pattern = candidates[slot % len(candidates)]
+        else:
+            pattern = generic
         gen = pattern["gens"][lang]
         tag = TAGS[slot % len(TAGS)]
         idx = slot
@@ -1243,11 +1235,36 @@ def generate_corpus(catalog: Dict[str, dict], need: int) -> List[Finding]:
                 lines=lines,
                 title=f"{pattern['title']}（{lang}）",
                 severity=pattern["sev"] if pattern["sev"] else sev_of(cwe, catalog),
-                origin="generated",
+                origin="implanted",
             )
         )
         slot += 1
 
+    return findings
+
+
+def load_platform_baseline(catalog: Dict[str, dict]) -> List[Finding]:
+    """Load the frozen platform-baseline findings."""
+    if not BASELINE_JSON.exists():
+        raise SystemExit(
+            f"missing {BASELINE_JSON}; run tools/freeze_to_platform_baseline.py first"
+        )
+    rows = json.loads(BASELINE_JSON.read_text(encoding="utf-8"))
+    findings: List[Finding] = []
+    for r in rows:
+        findings.append(
+            Finding(
+                vid=r["vid"],
+                cwe=r["cwe"],
+                cwe_name=r.get("cwe_name") or cwe_name(r["cwe"], catalog),
+                language=r["language"],
+                path=r["path"],
+                lines=str(r["lines"]),
+                title=r["title"],
+                severity=r["severity"],
+                origin="preset",
+            )
+        )
     return findings
 
 
@@ -1259,18 +1276,20 @@ def write_answer_key(findings: List[Finding], catalog: Dict[str, dict]) -> None:
         by_lang[f.language] = by_lang.get(f.language, 0) + 1
         by_cwe[f.cwe] = by_cwe.get(f.cwe, 0) + 1
 
+    lang_catalog = load_language_catalog()
     lines = []
     lines.append("# TechForum 漏洞答案对照表")
     lines.append("")
     lines.append("> **重要：若要进行安全分析，请先删除整个 `answer-key/` 目录。**  ")
     lines.append("> 本目录仅存放评测答案对照，与业务代码分离；保留本目录会泄露答案。")
     lines.append("")
-    lines.append(f"- 生成随机种子: `20260915`")
-    lines.append(f"- 条目总数: **{len(findings)}**")
-    lines.append(f"- 预置/基线: **{sum(1 for f in findings if f.origin=='preset')}**")
-    lines.append(f"- 新植入语料: **{sum(1 for f in findings if f.origin=='generated')}**")
+    lines.append(f"- **项目平台基线漏洞总数: {len(findings)}**（全部为 `V-PRESET-*`）")
+    lines.append("- 来源: 全部为平台基线（`preset`）")
+    lines.append(f"- 支持语言（用户清单）: **{len(lang_catalog)}**")
     lines.append(f"- CWE 目录来源: `tools/data/cwe_catalog.json`（共 {len(catalog)} 条）")
     lines.append(f"- 覆盖 CWE 种类: **{len(by_cwe)}**")
+    lines.append("- 冻结清单: `tools/data/platform_baseline.json`")
+    lines.append("- Excel 资料包: `answer-key/techforum-security-pack.xlsx`")
     lines.append("")
     lines.append("## 语言分布")
     lines.append("")
@@ -1287,30 +1306,32 @@ def write_answer_key(findings: List[Finding], catalog: Dict[str, dict]) -> None:
         name = f.cwe_name.replace("|", "/")
         title = f.title.replace("|", "/")
         lines.append(
-            f"| {f.vid} | {f.origin} | {f.cwe} | {name} | {f.language} | `{f.path}` | {f.lines} | {title} | {f.severity} |"
+            f"| {f.vid} | preset | {f.cwe} | {name} | {f.language} | `{f.path}` | {f.lines} | {title} | {f.severity} |"
         )
     lines.append("")
     lines.append("## 使用说明")
     lines.append("")
     lines.append("1. **若要进行安全分析，请先删除整个 `answer-key/` 目录**（本目录即答案）。")
-    lines.append("2. 产品代码与 `tf_ops` 语料中不包含 CWE 编号或漏洞说明文字。")
-    lines.append("3. 重新生成：`python3 tools/seed_cwe_corpus.py`")
-    lines.append("4. 预置项包含当前仍存在的问题，以及已修复但仍作为基线对照的历史点（`*-history`）。")
+    lines.append(f"2. {len(findings)} 条均为平台基线，已编入工程 `platform_baseline/` 与业务代码；源码不含 CWE/漏洞提示。")
+    lines.append("3. 导出答案：`python3 tools/seed_cwe_corpus.py`（默认只导出，不改动基线代码）。")
+    lines.append("4. 基线冻结文件：`tools/data/platform_baseline.json`。")
     lines.append("")
 
     ANSWER.write_text("\n".join(lines), encoding="utf-8")
+    write_security_pack_xlsx(lang_catalog, findings, LANG_DIRS, ANSWER_XLSX)
 
 
 def main():
     catalog = load_catalog()
-    presets = preset_findings(catalog)
-    need = max(0, TARGET_TOTAL - len(presets))
-    generated = generate_corpus(catalog, need)
-    all_findings = presets + generated
-    write_answer_key(all_findings, catalog)
-    print(f"presets={len(presets)} generated={len(generated)} total={len(all_findings)}")
+    # Default: export frozen platform baseline answers only (no code mutation).
+    findings = load_platform_baseline(catalog)
+    if len(findings) != TARGET_TOTAL:
+        raise SystemExit(f"baseline size {len(findings)} != {TARGET_TOTAL}")
+    write_answer_key(findings, catalog)
+    print(f"platform_baseline={len(findings)}")
     print(f"answer_key={ANSWER}")
-    print(f"corpus_dirs={len(LANG_DIRS)}")
+    print(f"answer_xlsx={ANSWER_XLSX}")
+    print(f"languages={len(load_language_catalog())}")
 
 
 if __name__ == "__main__":

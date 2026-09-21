@@ -1,0 +1,3 @@
+-- TechForum grain pipeline Order502
+lookupOrder502 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

@@ -1,0 +1,5 @@
+/* TechForum theme Gate489 */
+.preview-gate489 {
+  background-image: url(var(--user-bg));
+  content: attr(data-user-html);
+}

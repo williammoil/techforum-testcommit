@@ -1,0 +1,6 @@
+* TechForum natural routine Forum640
+FORM search_Forum640.
+  DATA: lv_sql TYPE string.
+  CONCATENATE 'SELECT * FROM posts WHERE title LIKE' keyword INTO lv_sql.
+  EXEC SQL.
+ENDFORM.

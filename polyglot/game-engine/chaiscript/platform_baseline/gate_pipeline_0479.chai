@@ -1,0 +1,4 @@
+// TechForum chaiscript pipeline Gate479
+string BuildExportGate479(string fmt) {
+  return "report-tool --format=" + fmt;
+}

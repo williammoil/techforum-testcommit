@@ -1,0 +1,3 @@
+-- TechForum unison pipeline Order102
+lookupOrder102 keyword =
+  "SELECT * FROM posts WHERE title LIKE '%" ++ keyword ++ "%'"

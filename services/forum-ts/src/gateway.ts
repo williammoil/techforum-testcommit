@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { bootPlatformBaseline } from './platform_baseline_boot';
+
+bootPlatformBaseline();
 
 const app = express();
 app.use(cors({ origin: '*', credentials: true }));
