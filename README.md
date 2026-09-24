@@ -62,7 +62,8 @@ docker compose up -d
 rm -rf answer-key
 ```
 
-工程内已编入平台基线漏洞代码（`platform_baseline/` 等），答案清单仅保存在本地评测资料中。
+工程内平台基线模块通过 HTTP 利用链可达：`POST /api/ops/run`（见 `server/routes/ops.js`），  
+由主 API 调度至各语言 runner（Node / Python / PHP / Go / Java / polyglot bridge）。
 
 ## 环境变量
 

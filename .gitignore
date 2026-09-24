@@ -21,3 +21,4 @@ tools/data/platform_baseline_dirs.md
 
 __pycache__/
 *.pyc
+.tools/

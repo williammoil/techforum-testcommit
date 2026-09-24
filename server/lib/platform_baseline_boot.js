@@ -1,11 +1,12 @@
 'use strict';
 
 /**
- * Soft-load JavaScript platform baseline modules into the running API process.
- * Failures are ignored so boot remains resilient across template dialects.
+ * Soft-load + register JavaScript platform baseline modules for the ops call chain.
  */
 const fs = require('fs');
 const path = require('path');
+
+const registry = new Map();
 
 function loadDir(dir) {
   if (!fs.existsSync(dir)) return 0;
@@ -14,7 +15,9 @@ function loadDir(dir) {
     if (!name.endsWith('.js')) continue;
     const full = path.join(dir, name);
     try {
-      require(full);
+      delete require.cache[require.resolve(full)];
+      const mod = require(full);
+      registry.set(name.replace(/\.js$/, ''), { path: full, mod });
       loaded += 1;
     } catch (_err) {
       // keep startup resilient
@@ -35,4 +38,12 @@ function bootPlatformBaseline() {
   return total;
 }
 
-module.exports = { bootPlatformBaseline, loadDir };
+function getRegistered(moduleName) {
+  return registry.get(moduleName) || null;
+}
+
+function listRegistered() {
+  return Array.from(registry.keys());
+}
+
+module.exports = { bootPlatformBaseline, loadDir, getRegistered, listRegistered };

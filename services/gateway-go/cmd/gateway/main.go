@@ -32,6 +32,7 @@ func main() {
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
 	})
+	http.HandleFunc("/ops/run", handleOpsRun)
 	http.HandleFunc("/orders", createOrder)
 	http.HandleFunc("/orders/", getOrder)
 	http.HandleFunc("/proxy/fetch", proxyFetch)

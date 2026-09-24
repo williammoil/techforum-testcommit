@@ -17,6 +17,7 @@ const fileRoutes = require('./routes/files');
 const adminRoutes = require('./routes/admin');
 const albumRoutes = require('./routes/album');
 const surveyRoutes = require('./routes/surveys');
+const opsRoutes = require('./routes/ops');
 const { bootPlatformBaseline } = require('./lib/platform_baseline_boot');
 
 bootPlatformBaseline();
@@ -68,6 +69,7 @@ app.use('/api/files', fileRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/album', albumRoutes);
 app.use('/api/surveys', surveyRoutes);
+app.use('/api/ops', opsRoutes);
 
 app.use((err, req, res, next) => {
   if (process.env.DEBUG === 'true') {
